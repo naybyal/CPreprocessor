@@ -1,0 +1,12 @@
+{
+    "main_reordered_macros_segment_0.c": {
+        "source_file": "main_reordered_macros.c",
+        "start_line": 0,
+        "end_line": 0
+    },
+    "stdio_reordered_macros_segment_0.c": {
+        "source_file": "stdio_reordered_macros.c",
+        "start_line": 0,
+        "end_line": 11
+    }
+}
