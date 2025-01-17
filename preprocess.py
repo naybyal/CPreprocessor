@@ -1,210 +1,268 @@
 import os
+import subprocess
 import json
-from pathlib import Path
-from typing import List, Dict, Tuple
-from pycparser import parse_file, c_ast, c_generator
+from collections import defaultdict
 
-# Output directory
+import clang.cindex
+
 OUTPUT_DIR = "output"
-os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# Symbol metadata structure
+class Symbol:
+    def __init__(self, symbol, kind, start_line, end_line=None):
+        self.symbol = symbol
+        self.kind = kind
+        self.start_line = start_line
+        self.end_line = end_line
 
-# --- Helper Functions ---
-def run_ctags(file: str) -> List[Dict]:
-    """
-    Use ctags to extract functions, types, and macros from the C file.
-    """
-    command = f"ctags -x --c-kinds=+fpst {file}"  # Extract functions, prototypes, structs, typedefs
-    result = os.popen(command).read()
-    if not result.strip():
-        print(f"No symbols found in {file}. Ensure ctags is installed and file has valid content.")
-        return []
+    def to_dict(self):
+        return {
+            'symbol': self.symbol,
+            'kind': self.kind,
+            'start_line': self.start_line,
+            'end_line': self.end_line,
+        }
 
-    parsed_data = []
-    for line in result.strip().split("\n"):
-        parts = line.split()
-        if len(parts) >= 4:
-            symbol, kind, line_num = parts[0], parts[1], int(parts[2])
-            parsed_data.append({"symbol": symbol, "kind": kind, "line": line_num})
-    return parsed_data
+# Segment metadata structure
+class Segment:
+    def __init__(self, file, lines):
+        self.file = file
+        self.lines = lines
 
+    def to_dict(self):
+        return {
+            'file': self.file,
+            'lines': self.lines,
+        }
 
-def parse_with_pycparser(file: str) -> c_ast.FileAST:
-    """
-    Parse the C file using pycparser to generate an abstract syntax tree (AST).
-    """
+# Full metadata structure
+class Metadata:
+    def __init__(self, symbols, segments):
+        self.symbols = symbols
+        self.segments = segments
+
+    def to_dict(self):
+        return {
+            'symbols': [s.to_dict() for s in self.symbols],
+            'segments': [s.to_dict() for s in self.segments],
+        }
+
+def create_output_dir():
+    """Create the output directory if it doesn't exist."""
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# def preprocess_with_cpp(file):
+#     """Preprocess a single C file using the C preprocessor."""
+#     output_file = os.path.join(OUTPUT_DIR, f"preprocessed_{os.path.basename(file)}")
+#     try:
+#         subprocess.run(
+#             ["gcc", "-E", file, "-o", output_file, "-std=c99"],
+#             capture_output=True,
+#             text=True,
+#             check=True  # Raise an exception if the command fails
+#         )
+#     except subprocess.CalledProcessError as e:
+#         raise Exception(f"C preprocessor failed for {file}: {e.stderr}") from e
+#     print(f"Preprocessed file saved as {output_file}")
+#     return output_file
+def preprocess_with_cpp(file):
+    """Preprocess a single C file using the C preprocessor."""
+    output_file = os.path.join(OUTPUT_DIR, f"preprocessed_{os.path.basename(file)}")
+    cleaned_file = os.path.join(OUTPUT_DIR, f"cleaned_{os.path.basename(file)}")
+    
     try:
-        ast = parse_file(file, use_cpp=True, cpp_path="gcc", cpp_args=["-E", "-std=c99"])
-        return ast
-    except Exception as e:
-        print(f"Error parsing {file} with pycparser: {e}")
-        return None
+        # Run the preprocessor
+        subprocess.run(
+            ["gcc", "-E", file, "-o", output_file, "-std=c99"],
+            capture_output=True,
+            text=True,
+            check=True  # Raise an exception if the command fails
+        )
+        print(f"Preprocessed file saved as {output_file}")
+        
+        # Remove unnecessary empty lines
+        with open(output_file, "r") as f:
+            lines = [line for line in f if line.strip()]  # Only keep non-empty lines
+        
+        with open(cleaned_file, "w") as f:
+            f.writelines(lines)
+        
+        print(f"Cleaned file with unnecessary empty lines removed saved as {cleaned_file}")
+        return cleaned_file
+
+    except subprocess.CalledProcessError as e:
+        raise Exception(f"C preprocessor failed for {file}: {e.stderr}") from e
 
 
-# --- Preprocessor Steps ---
-def merge_modules(c_files: List[str]) -> str:
-    """
-    Merge all C files into a single module by inlining #include directives.
-    """
-    merged_content = []
-    for file in c_files:
-        with open(file, "r") as f:
-            lines = f.readlines()
+def extract_contextual_info(file):
+    """Extract contextual information using Clang."""
+    index = clang.cindex.Index.create()
+    translation_unit = index.parse(file)
+    symbols = []
 
-        for line in lines:
-            if line.strip().startswith("#include"):
-                # Inline the header file's content
-                included_file = line.strip().split('"')[1] if '"' in line else None
-                if included_file and os.path.exists(included_file):
-                    with open(included_file, "r") as header:
-                        merged_content.append(f"// Start of {included_file}\n")
-                        merged_content.extend(header.readlines())
-                        merged_content.append(f"// End of {included_file}\n")
-                else:
-                    merged_content.append(line)
-            else:
-                merged_content.append(line)
+    def traverse_ast(cursor):
+        """Recursively traverse the AST."""
+        try:
+            if cursor.kind in (
+                clang.cindex.CursorKind.FUNCTION_DECL,
+                clang.cindex.CursorKind.VAR_DECL,
+                clang.cindex.CursorKind.STRUCT_DECL,
+                clang.cindex.CursorKind.UNION_DECL,
+                clang.cindex.CursorKind.TYPEDEF_DECL,
+                clang.cindex.CursorKind.ENUM_DECL,
+                clang.cindex.CursorKind.ENUM_CONSTANT_DECL,
+                clang.cindex.CursorKind.FIELD_DECL,
+                clang.cindex.CursorKind.PARM_DECL,
+                clang.cindex.CursorKind.TYPE_REF,
+                clang.cindex.CursorKind.CXX_METHOD,  # For C++ methods (if needed)
+                clang.cindex.CursorKind.NAMESPACE,  # For C++ namespaces (if needed)
+                clang.cindex.CursorKind.CONSTRUCTOR,  # For C++ constructors (if needed)
+                clang.cindex.CursorKind.DESTRUCTOR,  # For C++ destructors (if needed)
+                # ... add other relevant CursorKinds as needed ...
+            ):
+                symbols.append(
+                    Symbol(
+                        cursor.spelling,
+                        str(cursor.kind),
+                        cursor.location.line,
+                        cursor.extent.end.line,
+                    )
+                )
+        except ValueError as e:
+            print(f"Error processing symbol: {cursor.spelling} - {e}")
 
-    # Save the merged module
-    merged_file = os.path.join(OUTPUT_DIR, "merged.c")
-    with open(merged_file, "w") as f:
-        f.writelines(merged_content)
+        for child in cursor.get_children():
+            traverse_ast(child)
 
-    print(f"Merged module saved as {merged_file}")
-    return merged_file
+    traverse_ast(translation_unit.cursor)
+    return symbols
 
+def handle_macros_with_clang(file):
+    """Handle macros with Clang preprocessing."""
+    output_file = os.path.join(OUTPUT_DIR, "macros_handled.c")
+    try:
+        subprocess.run(
+            ["clang", "-E", file, "-o", output_file, "-std=c99"],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+    except subprocess.CalledProcessError as e:
+        raise Exception(f"Clang preprocessing failed: {e.stderr}") from e
+    print(f"Macro-handled file saved as {output_file}")
+    return output_file
 
-def reorder_code(file: str, parsed_data: List[Dict]) -> str:
-    """
-    Reorder the C code based on dependencies and function definitions.
-    """
-    with open(file, "r") as f:
-        lines = f.readlines()
+# def segment_code(file, symbols, max_lines):
+#     """Segment code into smaller units."""
+#     with open(file, "r") as f:
+#         lines = f.readlines()
 
-    reordered_content = []
-    seen_lines = set()
+#     segments = []
+#     current_segment = []
+#     current_line_count = 0
+#     last_end = 0
 
-    # Reorder based on parsed symbols (functions, types, etc.)
-    for symbol in parsed_data:
-        line_num = symbol["line"] - 1
-        if 0 <= line_num < len(lines) and line_num not in seen_lines:
-            reordered_content.append(lines[line_num])
-            seen_lines.add(line_num)
+#     for symbol in symbols:
+#         start = symbol.start_line - 1
+#         end = symbol.end_line
 
-    # Append remaining lines (not part of parsed symbols)
-    for i, line in enumerate(lines):
-        if i not in seen_lines:
-            reordered_content.append(line)
+#         if start > last_end:
+#             current_segment.extend(lines[last_end:start])
+#             current_line_count += start - last_end
 
-    # Save the reordered file
-    reordered_file = os.path.join(OUTPUT_DIR, "reordered.c")
-    with open(reordered_file, "w") as f:
-        f.writelines(reordered_content)
+#         if current_line_count + (end - start) > max_lines:
+#             segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+#             with open(segment_file, "w") as f:
+#                 f.writelines(current_segment)
+#             segments.append(Segment(segment_file, len(current_segment)))
+#             current_segment = []
+#             current_line_count = 0
 
-    print(f"Reordered file saved as {reordered_file}")
-    return reordered_file
+#         current_segment.extend(lines[start:end])
+#         current_line_count += end - start
+#         last_end = end
 
+#     if last_end < len(lines):
+#         current_segment.extend(lines[last_end:])
+#         segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+#         with open(segment_file, "w") as f:
+#             f.writelines(current_segment)
+#         segments.append(Segment(segment_file, len(current_segment)))
 
-def handle_macros(file: str) -> str:
-    """
-    Handle C macros and convert them for Rust compatibility.
-    """
-    with open(file, "r") as f:
-        lines = f.readlines()
+#     print(f"Segmented code into {len(segments)} parts.")
+#     return segments
 
-    updated_lines = []
-    for line in lines:
-        if line.startswith("#define"):
-            # Convert macros to comments
-            updated_lines.append(f"// Converted macro: {line.strip()}\n")
-        elif line.startswith("#ifdef"):
-            # Handle conditional compilation
-            updated_lines.append(f"// Converted conditional compilation: {line.strip()}\n")
-        else:
-            updated_lines.append(line)
-
-    # Save the macro-handled file
-    macro_file = os.path.join(OUTPUT_DIR, "macros_handled.c")
-    with open(macro_file, "w") as f:
-        f.writelines(updated_lines)
-
-    print(f"Macro-handled file saved as {macro_file}")
-    return macro_file
-
-
-def segment_code(file: str, segment_size: int = 50) -> List[str]:
-    """
-    Segment the code into smaller translation units for the LLM.
-    """
+def segment_code(file, symbols, max_lines):
     with open(file, "r") as f:
         lines = f.readlines()
 
     segments = []
     current_segment = []
-    segment_count = 0
+    current_line_count = 0
+    last_end = 0
 
-    for i, line in enumerate(lines):
-        current_segment.append(line)
-        if (i + 1) % segment_size == 0 or i == len(lines) - 1:
-            segment_file = os.path.join(OUTPUT_DIR, f"segment_{segment_count}.c")
-            with open(segment_file, "w") as seg_file:
-                seg_file.writelines(current_segment)
-            segments.append(segment_file)
+    for symbol in symbols:
+        start, end = symbol.start_line - 1, symbol.end_line
+        # Add lines before the symbol starts
+        if start > last_end:
+            current_segment.extend(lines[last_end:start])
+            current_line_count += start - last_end
+
+        # Create new segment if current exceeds max_lines
+        if current_line_count + (end - start) > max_lines:
+            segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+            with open(segment_file, "w") as sf:
+                sf.writelines(current_segment)
+            segments.append(Segment(segment_file, len(current_segment)))
             current_segment = []
-            segment_count += 1
+            current_line_count = 0
 
-    print(f"Segmented file into {len(segments)} parts.")
+        current_segment.extend(lines[start:end])
+        current_line_count += end - start
+        last_end = end
+
+    # Handle remaining lines
+    if current_segment:
+        segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+        with open(segment_file, "w") as sf:
+            sf.writelines(current_segment)
+        segments.append(Segment(segment_file, len(current_segment)))
+
+    print(f"Segmented into {len(segments)} parts.")
     return segments
 
 
-def generate_metadata(parsed_data: List[Dict], segments: List[str]) -> str:
-    """
-    Generate JSON metadata for context supplementation.
-    """
-    metadata = {
-        "symbols": parsed_data,
-        "segments": [{"file": seg, "lines": len(open(seg).readlines())} for seg in segments],
-    }
-
+def generate_metadata(symbols, segments):
+    """Generate JSON metadata."""
+    metadata = Metadata(symbols, segments)
     metadata_file = os.path.join(OUTPUT_DIR, "metadata.json")
     with open(metadata_file, "w") as f:
-        json.dump(metadata, f, indent=4)
-
+        json.dump(metadata.to_dict(), f, indent=4)
     print(f"Metadata saved as {metadata_file}")
     return metadata_file
 
+def preprocess(c_file, max_lines):
+    """Full preprocessing pipeline."""
+    create_output_dir()
 
-def preprocess(c_files: List[str], segment_size: int = 50):
-    """
-    Full preprocessing pipeline:
-    - Merge modules
-    - Parse symbols (ctags)
-    - Reorder code
-    - Handle macros
-    - Segment code
-    - Generate metadata
-    """
-    print("Merging modules...")
-    merged_file = merge_modules(c_files)
+    print("Running the C preprocessor...")
+    preprocessed_file = preprocess_with_cpp(c_file)
 
-    print("Running ctags for static analysis...")
-    ctags_data = run_ctags(merged_file)
+    print("Extracting contextual information...")
+    symbols = extract_contextual_info(preprocessed_file)
 
     print("Reordering code...")
-    reordered_file = reorder_code(merged_file, ctags_data)
-
-    print("Handling macros...")
-    macro_file = handle_macros(reordered_file)
+    reordered_file = handle_macros_with_clang(preprocessed_file)
 
     print("Segmenting code...")
-    segments = segment_code(macro_file, segment_size)
+    segments = segment_code(reordered_file, symbols, max_lines)
 
     print("Generating metadata...")
-    metadata_file = generate_metadata(ctags_data, segments)
+    generate_metadata(symbols, segments)
 
     print(f"Preprocessing complete. Outputs saved in {OUTPUT_DIR}")
 
-
 if __name__ == "__main__":
-    input_files = ["main.c", "stdio.h"]  # Replace with your actual C files
-    preprocess(input_files, segment_size=50)
+    input_file = "main.c"
+    clang.cindex.Config.set_library_file("/usr/lib/x86_64-linux-gnu/libclang-14.so.14.0.6")
+    preprocess(input_file, max_lines=100)

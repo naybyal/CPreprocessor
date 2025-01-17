@@ -1,10 +1,3 @@
-# 1 "output/cleaned_main.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 360 "<built-in>" 3
-# 1 "<command line>" 1
-# 1 "<built-in>" 2
-# 1 "output/cleaned_main.c" 2
 # 0 "main.c"
 # 0 "<built-in>"
 # 0 "<command-line>"

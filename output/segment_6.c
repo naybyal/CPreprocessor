@@ -1,50 +1,100 @@
-  __builtin___sprintf_chk (str, 0, __ssp_bos (str), \
-			   __VA_ARGS__)
-  __builtin___vsprintf_chk (str, 0, __ssp_bos (str), fmt, ap)
-
-			   size_t __slen, __const char *__restrict__ __format,
-			   ...);
-			    size_t __slen, __const char *__restrict__ __format,
-			    va_list __ap);
-
-  __builtin___snprintf_chk (str, len, 0, __ssp_bos (str), __VA_ARGS__)
-  __builtin___vsnprintf_chk (str, len, 0, __ssp_bos (str), fmt, ap)
-
-extern char *__SSP_REDIRECT (__gets_alias, (char *__str), gets);
-
-extern inline __attribute__((__always_inline__)) char *
-{
-  if (__ssp_bos (__str) != (size_t) -1)
-    return __gets_chk (__str, __ssp_bos (__str));
-  return __gets_alias (__str);
-}
-
-extern char *__SSP_REDIRECT (__fgets_alias,
-			     (char *__restrict__ __s, int __n,
-			      FILE *__restrict__ __stream), fgets);
-
-extern inline __attribute__((__always_inline__)) char *
-{
-  if (__ssp_bos (__s) != (size_t) -1 && (size_t) __n > __ssp_bos (__s))
-    __chk_fail ();
-  return __fgets_alias (__s, __n, __stream);
-}
-
-#endif /* __SSP_FORTIFY_LEVEL > 0 */
-#endif /* _SSP_STDIO_H */
-/* SPDX-License-Identifier: GPL-2.0-or-later */
-/*
- *  Copyright (C) 2014, Samsung Electronics Co. Ltd. All Rights Reserved.
- */
-
-#ifndef __SSP_SENSORHUB_H__
-
-#include <linux/delay.h>
-#include <linux/gpio/consumer.h>
-#include <linux/iio/common/ssp_sensors.h>
-#include <linux/iio/iio.h>
-#include <linux/spi/spi.h>
-
-
-// Converted conditional compilation: #ifdef SSP_DBG
-#else
+        size_t __n, FILE *__restrict __s);
+        size_t __n, FILE *__restrict __s);
+        size_t __n, FILE *__restrict __s);
+        size_t __n, FILE *__restrict __s);
+        size_t __n, FILE *__restrict __s);
+# 713 "/usr/include/stdio.h" 3 4
+extern int fseek (FILE *__stream, long int __off, int __whence);
+extern int fseek (FILE *__stream, long int __off, int __whence);
+extern int fseek (FILE *__stream, long int __off, int __whence);
+extern long int ftell (FILE *__stream) ;
+extern long int ftell (FILE *__stream) ;
+extern long int ftell (FILE *__stream) ;
+extern void rewind (FILE *__stream);
+extern void rewind (FILE *__stream);
+extern void rewind (FILE *__stream);
+# 760 "/usr/include/stdio.h" 3 4
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+# 786 "/usr/include/stdio.h" 3 4
+# 786 "/usr/include/stdio.h" 3 4
+# 786 "/usr/include/stdio.h" 3 4
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 804 "/usr/include/stdio.h" 3 4
+extern void perror (const char *__s);
+# 885 "/usr/include/stdio.h" 3 4
+extern int __uflow (FILE *);
+extern int __overflow (FILE *, int);
+# 909 "/usr/include/stdio.h" 3 4
+# 2 "main.c" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/string.h" 1 3 4
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h" 1 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 43 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+# 43 "/usr/include/string.h" 3 4
+# 43 "/usr/include/string.h" 3 4
+# 43 "/usr/include/string.h" 3 4
+# 43 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+# 61 "/usr/include/string.h" 3 4
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 80 "/usr/include/string.h" 3 4
+extern int __memcmpeq (const void *__s1, const void *__s2, size_t __n)
+# 80 "/usr/include/string.h" 3 4
+# 80 "/usr/include/string.h" 3 4
+extern int __memcmpeq (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 107 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 107 "/usr/include/string.h" 3 4
+# 107 "/usr/include/string.h" 3 4
+# 107 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 141 "/usr/include/string.h" 3 4
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 141 "/usr/include/string.h" 3 4
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
