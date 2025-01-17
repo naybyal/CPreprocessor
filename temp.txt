@@ -1,0 +1,54 @@
+# def segment_code(file, symbols, max_lines):
+#     """Segment code into smaller units."""
+#     with open(file, "r") as f:
+#         lines = f.readlines()
+
+#     segments = []
+#     current_segment = []
+#     current_line_count = 0
+#     last_end = 0
+
+#     for symbol in symbols:
+#         start = symbol.start_line - 1
+#         end = symbol.end_line
+
+#         if start > last_end:
+#             current_segment.extend(lines[last_end:start])
+#             current_line_count += start - last_end
+
+#         if current_line_count + (end - start) > max_lines:
+#             segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+#             with open(segment_file, "w") as f:
+#                 f.writelines(current_segment)
+#             segments.append(Segment(segment_file, len(current_segment)))
+#             current_segment = []
+#             current_line_count = 0
+
+#         current_segment.extend(lines[start:end])
+#         current_line_count += end - start
+#         last_end = end
+
+#     if last_end < len(lines):
+#         current_segment.extend(lines[last_end:])
+#         segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+#         with open(segment_file, "w") as f:
+#             f.writelines(current_segment)
+#         segments.append(Segment(segment_file, len(current_segment)))
+
+#     print(f"Segmented code into {len(segments)} parts.")
+#     return segments
+
+# def preprocess_with_cpp(file):
+#     """Preprocess a single C file using the C preprocessor."""
+#     output_file = os.path.join(OUTPUT_DIR, f"preprocessed_{os.path.basename(file)}")
+#     try:
+#         subprocess.run(
+#             ["gcc", "-E", file, "-o", output_file, "-std=c99"],
+#             capture_output=True,
+#             text=True,
+#             check=True  # Raise an exception if the command fails
+#         )
+#     except subprocess.CalledProcessError as e:
+#         raise Exception(f"C preprocessor failed for {file}: {e.stderr}") from e
+#     print(f"Preprocessed file saved as {output_file}")
+#     return output_file
