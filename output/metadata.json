@@ -1,3988 +1,548 @@
 {
     "symbols": [
         {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 42,
-            "end_line": 42
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 46,
-            "end_line": 46
-        },
-        {
-            "symbol": "__builtin_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 46,
-            "end_line": 46
-        },
-        {
-            "symbol": "__u_char",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 57,
-            "end_line": 57
-        },
-        {
-            "symbol": "__u_short",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 58,
-            "end_line": 58
-        },
-        {
-            "symbol": "__u_int",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 59,
-            "end_line": 59
-        },
-        {
-            "symbol": "__u_long",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 60,
-            "end_line": 60
-        },
-        {
-            "symbol": "__int8_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 61,
-            "end_line": 61
-        },
-        {
-            "symbol": "__uint8_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 62,
-            "end_line": 62
-        },
-        {
-            "symbol": "__int16_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 63,
-            "end_line": 63
-        },
-        {
-            "symbol": "__uint16_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 64,
-            "end_line": 64
-        },
-        {
-            "symbol": "__int32_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 65,
-            "end_line": 65
-        },
-        {
-            "symbol": "__uint32_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 66,
-            "end_line": 66
-        },
-        {
-            "symbol": "__int64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 67,
-            "end_line": 67
-        },
-        {
-            "symbol": "__uint64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 68,
-            "end_line": 68
-        },
-        {
-            "symbol": "__int_least8_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 69,
-            "end_line": 69
-        },
-        {
-            "symbol": "__int8_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 69,
-            "end_line": 69
-        },
-        {
-            "symbol": "__uint_least8_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 70,
-            "end_line": 70
-        },
-        {
-            "symbol": "__uint8_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 70,
-            "end_line": 70
-        },
-        {
-            "symbol": "__int_least16_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 71,
-            "end_line": 71
-        },
-        {
-            "symbol": "__int16_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 71,
-            "end_line": 71
-        },
-        {
-            "symbol": "__uint_least16_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 72,
-            "end_line": 72
-        },
-        {
-            "symbol": "__uint16_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 72,
-            "end_line": 72
-        },
-        {
-            "symbol": "__int_least32_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 73,
-            "end_line": 73
-        },
-        {
-            "symbol": "__int32_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 73,
-            "end_line": 73
-        },
-        {
-            "symbol": "__uint_least32_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 74,
-            "end_line": 74
-        },
-        {
-            "symbol": "__uint32_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 74,
-            "end_line": 74
-        },
-        {
-            "symbol": "__int_least64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 75,
-            "end_line": 75
-        },
-        {
-            "symbol": "__int64_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 75,
-            "end_line": 75
-        },
-        {
-            "symbol": "__uint_least64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 76,
-            "end_line": 76
-        },
-        {
-            "symbol": "__uint64_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 76,
-            "end_line": 76
-        },
-        {
-            "symbol": "__quad_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 77,
-            "end_line": 77
-        },
-        {
-            "symbol": "__u_quad_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 78,
-            "end_line": 78
-        },
-        {
-            "symbol": "__intmax_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 79,
-            "end_line": 79
-        },
-        {
-            "symbol": "__uintmax_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 80,
-            "end_line": 80
-        },
-        {
-            "symbol": "__dev_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 86,
-            "end_line": 86
-        },
-        {
-            "symbol": "__uid_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 87,
-            "end_line": 87
-        },
-        {
-            "symbol": "__gid_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 88,
-            "end_line": 88
-        },
-        {
-            "symbol": "__ino_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 89,
-            "end_line": 89
-        },
-        {
-            "symbol": "__ino64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 90,
-            "end_line": 90
-        },
-        {
-            "symbol": "__mode_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 91,
-            "end_line": 91
-        },
-        {
-            "symbol": "__nlink_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 92,
-            "end_line": 92
-        },
-        {
-            "symbol": "__off_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 93,
-            "end_line": 93
-        },
-        {
-            "symbol": "__off64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
+            "name": "",
+            "kind": "CursorKind.STRUCT_DECL",
             "start_line": 94,
-            "end_line": 94
+            "end_line": 94,
+            "dependencies": []
         },
         {
-            "symbol": "__pid_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 95,
-            "end_line": 95
-        },
-        {
-            "symbol": "",
+            "name": "",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 96,
-            "end_line": 96
+            "start_line": 94,
+            "end_line": 94,
+            "dependencies": []
         },
         {
-            "symbol": "__val",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 96,
-            "end_line": 96
-        },
-        {
-            "symbol": "__fsid_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 96,
-            "end_line": 96
-        },
-        {
-            "symbol": "",
+            "name": "",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 96,
-            "end_line": 96
+            "start_line": 127,
+            "end_line": 135,
+            "dependencies": []
         },
         {
-            "symbol": "__val",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 96,
-            "end_line": 96
-        },
-        {
-            "symbol": "__clock_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 97,
-            "end_line": 97
-        },
-        {
-            "symbol": "__rlim_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 98,
-            "end_line": 98
-        },
-        {
-            "symbol": "__rlim64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 99,
-            "end_line": 99
-        },
-        {
-            "symbol": "__id_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 100,
-            "end_line": 100
-        },
-        {
-            "symbol": "__time_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 101,
-            "end_line": 101
-        },
-        {
-            "symbol": "__useconds_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 102,
-            "end_line": 102
-        },
-        {
-            "symbol": "__suseconds_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 103,
-            "end_line": 103
-        },
-        {
-            "symbol": "__suseconds64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 104,
-            "end_line": 104
-        },
-        {
-            "symbol": "__daddr_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 105,
-            "end_line": 105
-        },
-        {
-            "symbol": "__key_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 106,
-            "end_line": 106
-        },
-        {
-            "symbol": "__clockid_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 107,
-            "end_line": 107
-        },
-        {
-            "symbol": "__timer_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 108,
-            "end_line": 108
-        },
-        {
-            "symbol": "__blksize_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 109,
-            "end_line": 109
-        },
-        {
-            "symbol": "__blkcnt_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 110,
-            "end_line": 110
-        },
-        {
-            "symbol": "__blkcnt64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 111,
-            "end_line": 111
-        },
-        {
-            "symbol": "__fsblkcnt_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 112,
-            "end_line": 112
-        },
-        {
-            "symbol": "__fsblkcnt64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 113,
-            "end_line": 113
-        },
-        {
-            "symbol": "__fsfilcnt_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 114,
-            "end_line": 114
-        },
-        {
-            "symbol": "__fsfilcnt64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 115,
-            "end_line": 115
-        },
-        {
-            "symbol": "__fsword_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 116,
-            "end_line": 116
-        },
-        {
-            "symbol": "__ssize_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 117,
-            "end_line": 117
-        },
-        {
-            "symbol": "__syscall_slong_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 118,
-            "end_line": 118
-        },
-        {
-            "symbol": "__syscall_ulong_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 119,
-            "end_line": 119
-        },
-        {
-            "symbol": "__loff_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 120,
-            "end_line": 120
-        },
-        {
-            "symbol": "__off64_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 120,
-            "end_line": 120
-        },
-        {
-            "symbol": "__caddr_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 121,
-            "end_line": 121
-        },
-        {
-            "symbol": "__intptr_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 122,
-            "end_line": 122
-        },
-        {
-            "symbol": "__socklen_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 123,
-            "end_line": 123
-        },
-        {
-            "symbol": "__sig_atomic_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 124,
-            "end_line": 124
-        },
-        {
-            "symbol": "",
+            "name": "",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 129,
-            "end_line": 137
+            "start_line": 127,
+            "end_line": 135,
+            "dependencies": []
         },
         {
-            "symbol": "__count",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 131,
-            "end_line": 131
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.UNION_DECL",
-            "start_line": 132,
-            "end_line": 136
-        },
-        {
-            "symbol": "__wch",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 134,
-            "end_line": 134
-        },
-        {
-            "symbol": "__wchb",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 135,
-            "end_line": 135
-        },
-        {
-            "symbol": "__value",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 136,
-            "end_line": 136
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.UNION_DECL",
-            "start_line": 132,
-            "end_line": 136
-        },
-        {
-            "symbol": "__wch",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 134,
-            "end_line": 134
-        },
-        {
-            "symbol": "__wchb",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 135,
-            "end_line": 135
-        },
-        {
-            "symbol": "__mbstate_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
+            "name": "_G_fpos_t",
+            "kind": "CursorKind.STRUCT_DECL",
             "start_line": 137,
-            "end_line": 137
+            "end_line": 141,
+            "dependencies": []
         },
         {
-            "symbol": "",
+            "name": "_G_fpos_t",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 129,
-            "end_line": 137
+            "start_line": 137,
+            "end_line": 141,
+            "dependencies": []
         },
         {
-            "symbol": "__count",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 131,
-            "end_line": 131
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.UNION_DECL",
-            "start_line": 132,
-            "end_line": 136
-        },
-        {
-            "symbol": "__wch",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 134,
-            "end_line": 134
-        },
-        {
-            "symbol": "__wchb",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 135,
-            "end_line": 135
-        },
-        {
-            "symbol": "__value",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 136,
-            "end_line": 136
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.UNION_DECL",
-            "start_line": 132,
-            "end_line": 136
-        },
-        {
-            "symbol": "__wch",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 134,
-            "end_line": 134
-        },
-        {
-            "symbol": "__wchb",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 135,
-            "end_line": 135
-        },
-        {
-            "symbol": "_G_fpos_t",
+            "name": "_G_fpos64_t",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 139,
-            "end_line": 143
+            "start_line": 145,
+            "end_line": 149,
+            "dependencies": []
         },
         {
-            "symbol": "__pos",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 141,
-            "end_line": 141
-        },
-        {
-            "symbol": "__off_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 141,
-            "end_line": 141
-        },
-        {
-            "symbol": "__state",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 142,
-            "end_line": 142
-        },
-        {
-            "symbol": "__mbstate_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 142,
-            "end_line": 142
-        },
-        {
-            "symbol": "__fpos_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 143,
-            "end_line": 143
-        },
-        {
-            "symbol": "_G_fpos_t",
+            "name": "_G_fpos64_t",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 139,
-            "end_line": 143
+            "start_line": 145,
+            "end_line": 149,
+            "dependencies": []
         },
         {
-            "symbol": "__pos",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 141,
-            "end_line": 141
-        },
-        {
-            "symbol": "__off_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 141,
-            "end_line": 141
-        },
-        {
-            "symbol": "__state",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 142,
-            "end_line": 142
-        },
-        {
-            "symbol": "__mbstate_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 142,
-            "end_line": 142
-        },
-        {
-            "symbol": "_G_fpos64_t",
+            "name": "_IO_FILE",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 147,
-            "end_line": 151
+            "start_line": 152,
+            "end_line": 152,
+            "dependencies": []
         },
         {
-            "symbol": "__pos",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 149,
-            "end_line": 149
-        },
-        {
-            "symbol": "__off64_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 149,
-            "end_line": 149
-        },
-        {
-            "symbol": "__state",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 150,
-            "end_line": 150
-        },
-        {
-            "symbol": "__mbstate_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 150,
-            "end_line": 150
-        },
-        {
-            "symbol": "__fpos64_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 151,
-            "end_line": 151
-        },
-        {
-            "symbol": "_G_fpos64_t",
+            "name": "_IO_FILE",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 147,
-            "end_line": 151
+            "start_line": 156,
+            "end_line": 156,
+            "dependencies": []
         },
         {
-            "symbol": "__pos",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 149,
-            "end_line": 149
-        },
-        {
-            "symbol": "__off64_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 149,
-            "end_line": 149
-        },
-        {
-            "symbol": "__state",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 150,
-            "end_line": 150
-        },
-        {
-            "symbol": "__mbstate_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 150,
-            "end_line": 150
-        },
-        {
-            "symbol": "_IO_FILE",
+            "name": "_IO_FILE",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 154,
-            "end_line": 154
+            "start_line": 161,
+            "end_line": 161,
+            "dependencies": []
         },
         {
-            "symbol": "__FILE",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 155,
-            "end_line": 155
-        },
-        {
-            "symbol": "struct _IO_FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 155,
-            "end_line": 155
-        },
-        {
-            "symbol": "_IO_FILE",
+            "name": "_IO_marker",
             "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 158,
-            "end_line": 158
+            "start_line": 162,
+            "end_line": 162,
+            "dependencies": []
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 159,
-            "end_line": 159
-        },
-        {
-            "symbol": "struct _IO_FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 159,
-            "end_line": 159
-        },
-        {
-            "symbol": "_IO_FILE",
+            "name": "_IO_codecvt",
             "kind": "CursorKind.STRUCT_DECL",
             "start_line": 163,
-            "end_line": 163
+            "end_line": 163,
+            "dependencies": []
         },
         {
-            "symbol": "_IO_marker",
+            "name": "_IO_wide_data",
             "kind": "CursorKind.STRUCT_DECL",
             "start_line": 164,
-            "end_line": 164
+            "end_line": 164,
+            "dependencies": []
         },
         {
-            "symbol": "_IO_codecvt",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 165,
-            "end_line": 165
-        },
-        {
-            "symbol": "_IO_wide_data",
+            "name": "_IO_FILE",
             "kind": "CursorKind.STRUCT_DECL",
             "start_line": 166,
-            "end_line": 166
+            "end_line": 197,
+            "dependencies": []
         },
         {
-            "symbol": "_IO_lock_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 167,
-            "end_line": 167
+            "name": "stdin",
+            "kind": "CursorKind.VAR_DECL",
+            "start_line": 205,
+            "end_line": 205,
+            "dependencies": [
+                "FILE"
+            ]
         },
         {
-            "symbol": "_IO_FILE",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 168,
-            "end_line": 199
+            "name": "stdout",
+            "kind": "CursorKind.VAR_DECL",
+            "start_line": 206,
+            "end_line": 206,
+            "dependencies": [
+                "FILE"
+            ]
         },
         {
-            "symbol": "_flags",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 170,
-            "end_line": 170
-        },
-        {
-            "symbol": "_IO_read_ptr",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 171,
-            "end_line": 171
-        },
-        {
-            "symbol": "_IO_read_end",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 172,
-            "end_line": 172
-        },
-        {
-            "symbol": "_IO_read_base",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 173,
-            "end_line": 173
-        },
-        {
-            "symbol": "_IO_write_base",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 174,
-            "end_line": 174
-        },
-        {
-            "symbol": "_IO_write_ptr",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 175,
-            "end_line": 175
-        },
-        {
-            "symbol": "_IO_write_end",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 176,
-            "end_line": 176
-        },
-        {
-            "symbol": "_IO_buf_base",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 177,
-            "end_line": 177
-        },
-        {
-            "symbol": "_IO_buf_end",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 178,
-            "end_line": 178
-        },
-        {
-            "symbol": "_IO_save_base",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 179,
-            "end_line": 179
-        },
-        {
-            "symbol": "_IO_backup_base",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 180,
-            "end_line": 180
-        },
-        {
-            "symbol": "_IO_save_end",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 181,
-            "end_line": 181
-        },
-        {
-            "symbol": "_markers",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 182,
-            "end_line": 182
-        },
-        {
-            "symbol": "struct _IO_marker",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 182,
-            "end_line": 182
-        },
-        {
-            "symbol": "_chain",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 183,
-            "end_line": 183
-        },
-        {
-            "symbol": "struct _IO_FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 183,
-            "end_line": 183
-        },
-        {
-            "symbol": "_fileno",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 184,
-            "end_line": 184
-        },
-        {
-            "symbol": "_flags2",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 185,
-            "end_line": 185
-        },
-        {
-            "symbol": "_old_offset",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 186,
-            "end_line": 186
-        },
-        {
-            "symbol": "__off_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 186,
-            "end_line": 186
-        },
-        {
-            "symbol": "_cur_column",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 187,
-            "end_line": 187
-        },
-        {
-            "symbol": "_vtable_offset",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 188,
-            "end_line": 188
-        },
-        {
-            "symbol": "_shortbuf",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 189,
-            "end_line": 189
-        },
-        {
-            "symbol": "_lock",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 190,
-            "end_line": 190
-        },
-        {
-            "symbol": "_IO_lock_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 190,
-            "end_line": 190
-        },
-        {
-            "symbol": "_offset",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 191,
-            "end_line": 191
-        },
-        {
-            "symbol": "__off64_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 191,
-            "end_line": 191
-        },
-        {
-            "symbol": "_codecvt",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 192,
-            "end_line": 192
-        },
-        {
-            "symbol": "struct _IO_codecvt",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 192,
-            "end_line": 192
-        },
-        {
-            "symbol": "_wide_data",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 193,
-            "end_line": 193
-        },
-        {
-            "symbol": "struct _IO_wide_data",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 193,
-            "end_line": 193
-        },
-        {
-            "symbol": "_freeres_list",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 194,
-            "end_line": 194
-        },
-        {
-            "symbol": "struct _IO_FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 194,
-            "end_line": 194
-        },
-        {
-            "symbol": "_freeres_buf",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 195,
-            "end_line": 195
-        },
-        {
-            "symbol": "__pad5",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 196,
-            "end_line": 196
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 196,
-            "end_line": 196
-        },
-        {
-            "symbol": "_mode",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 197,
-            "end_line": 197
-        },
-        {
-            "symbol": "_unused2",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 198,
-            "end_line": 198
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 198,
-            "end_line": 198
-        },
-        {
-            "symbol": "fpos_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 202,
-            "end_line": 202
-        },
-        {
-            "symbol": "__fpos_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 202,
-            "end_line": 202
-        },
-        {
-            "symbol": "stdin",
+            "name": "stderr",
             "kind": "CursorKind.VAR_DECL",
             "start_line": 207,
-            "end_line": 207
+            "end_line": 207,
+            "dependencies": [
+                "FILE"
+            ]
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 207,
-            "end_line": 207
-        },
-        {
-            "symbol": "stdout",
-            "kind": "CursorKind.VAR_DECL",
+            "name": "remove",
+            "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 208,
-            "end_line": 208
+            "end_line": 208,
+            "dependencies": []
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 208,
-            "end_line": 208
-        },
-        {
-            "symbol": "stderr",
-            "kind": "CursorKind.VAR_DECL",
+            "name": "rename",
+            "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 209,
-            "end_line": 209
+            "end_line": 209,
+            "dependencies": []
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 209,
-            "end_line": 209
-        },
-        {
-            "symbol": "remove",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 210,
-            "end_line": 210
-        },
-        {
-            "symbol": "__filename",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 210,
-            "end_line": 210
-        },
-        {
-            "symbol": "rename",
+            "name": "fclose",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 211,
-            "end_line": 211
+            "end_line": 211,
+            "dependencies": []
         },
         {
-            "symbol": "__old",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 211,
-            "end_line": 211
-        },
-        {
-            "symbol": "__new",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 211,
-            "end_line": 211
-        },
-        {
-            "symbol": "fclose",
+            "name": "tmpfile",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 213,
-            "end_line": 213
+            "end_line": 214,
+            "dependencies": [
+                "FILE"
+            ]
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 213,
-            "end_line": 213
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 213,
-            "end_line": 213
-        },
-        {
-            "symbol": "tmpfile",
+            "name": "tmpnam",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 215,
-            "end_line": 216
+            "start_line": 216,
+            "end_line": 216,
+            "dependencies": []
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 215,
-            "end_line": 215
-        },
-        {
-            "symbol": "tmpnam",
+            "name": "fflush",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 218,
-            "end_line": 218
+            "end_line": 218,
+            "dependencies": []
         },
         {
-            "symbol": "",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 218,
-            "end_line": 218
-        },
-        {
-            "symbol": "fflush",
+            "name": "fopen",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 220,
-            "end_line": 220
+            "end_line": 222,
+            "dependencies": [
+                "FILE"
+            ]
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 220,
-            "end_line": 220
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 220,
-            "end_line": 220
-        },
-        {
-            "symbol": "fopen",
+            "name": "freopen",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 222,
-            "end_line": 224
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 222,
-            "end_line": 222
-        },
-        {
-            "symbol": "__filename",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 222,
-            "end_line": 222
-        },
-        {
-            "symbol": "__modes",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 223,
-            "end_line": 223
+            "end_line": 225,
+            "dependencies": [
+                "FILE"
+            ]
         },
         {
-            "symbol": "freopen",
+            "name": "setbuf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 225,
-            "end_line": 227
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 225,
-            "end_line": 225
-        },
-        {
-            "symbol": "__filename",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 225,
-            "end_line": 225
-        },
-        {
-            "symbol": "__modes",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 226,
-            "end_line": 226
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 227,
-            "end_line": 227
+            "end_line": 227,
+            "dependencies": []
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 227,
-            "end_line": 227
-        },
-        {
-            "symbol": "setbuf",
+            "name": "setvbuf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 229,
-            "end_line": 229
+            "start_line": 228,
+            "end_line": 229,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 229,
-            "end_line": 229
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 229,
-            "end_line": 229
-        },
-        {
-            "symbol": "__buf",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 229,
-            "end_line": 229
-        },
-        {
-            "symbol": "setvbuf",
+            "name": "fprintf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 230,
-            "end_line": 231
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 230,
-            "end_line": 230
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 230,
-            "end_line": 230
-        },
-        {
-            "symbol": "__buf",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 230,
-            "end_line": 230
-        },
-        {
-            "symbol": "__modes",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 231,
-            "end_line": 231
+            "end_line": 232,
+            "dependencies": []
         },
         {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 231,
-            "end_line": 231
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 231,
-            "end_line": 231
-        },
-        {
-            "symbol": "fprintf",
+            "name": "printf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 233,
-            "end_line": 234
+            "end_line": 233,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 233,
-            "end_line": 233
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 233,
-            "end_line": 233
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
+            "name": "sprintf",
+            "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 234,
-            "end_line": 234
+            "end_line": 235,
+            "dependencies": []
         },
         {
-            "symbol": "printf",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 235,
-            "end_line": 235
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 235,
-            "end_line": 235
-        },
-        {
-            "symbol": "sprintf",
+            "name": "vfprintf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 236,
-            "end_line": 237
+            "end_line": 237,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 236,
-            "end_line": 236
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 237,
-            "end_line": 237
-        },
-        {
-            "symbol": "vfprintf",
+            "name": "vprintf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 238,
-            "end_line": 239
+            "end_line": 238,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 238,
-            "end_line": 238
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 238,
-            "end_line": 238
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 238,
-            "end_line": 238
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
+            "name": "vsprintf",
+            "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 239,
-            "end_line": 239
+            "end_line": 240,
+            "dependencies": []
         },
         {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 239,
-            "end_line": 239
-        },
-        {
-            "symbol": "vprintf",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 240,
-            "end_line": 240
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 240,
-            "end_line": 240
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 240,
-            "end_line": 240
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 240,
-            "end_line": 240
-        },
-        {
-            "symbol": "vsprintf",
+            "name": "snprintf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 241,
-            "end_line": 242
+            "end_line": 243,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 241,
-            "end_line": 241
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 241,
-            "end_line": 241
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 242,
-            "end_line": 242
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 242,
-            "end_line": 242
-        },
-        {
-            "symbol": "snprintf",
+            "name": "vsnprintf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 243,
-            "end_line": 245
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 243,
-            "end_line": 243
-        },
-        {
-            "symbol": "__maxlen",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 243,
-            "end_line": 243
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 243,
-            "end_line": 243
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 244,
-            "end_line": 244
+            "end_line": 246,
+            "dependencies": []
         },
         {
-            "symbol": "vsnprintf",
+            "name": "fscanf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 246,
-            "end_line": 248
+            "start_line": 248,
+            "end_line": 249,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 246,
-            "end_line": 246
-        },
-        {
-            "symbol": "__maxlen",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 246,
-            "end_line": 246
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 246,
-            "end_line": 246
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 247,
-            "end_line": 247
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 247,
-            "end_line": 247
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 247,
-            "end_line": 247
-        },
-        {
-            "symbol": "fscanf",
+            "name": "scanf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 250,
-            "end_line": 251
+            "end_line": 250,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 250,
-            "end_line": 250
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 250,
-            "end_line": 250
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
+            "name": "sscanf",
+            "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 251,
-            "end_line": 251
+            "end_line": 252,
+            "dependencies": []
         },
         {
-            "symbol": "scanf",
+            "name": "fscanf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 252,
-            "end_line": 252
+            "start_line": 261,
+            "end_line": 261,
+            "dependencies": []
         },
         {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 252,
-            "end_line": 252
-        },
-        {
-            "symbol": "sscanf",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 253,
-            "end_line": 254
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 253,
-            "end_line": 253
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 254,
-            "end_line": 254
-        },
-        {
-            "symbol": "fscanf",
+            "name": "scanf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 263,
-            "end_line": 263
+            "end_line": 263,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 263,
-            "end_line": 263
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 263,
-            "end_line": 263
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 263,
-            "end_line": 263
-        },
-        {
-            "symbol": "scanf",
+            "name": "sscanf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 265,
-            "end_line": 265
+            "end_line": 265,
+            "dependencies": []
         },
         {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 265,
-            "end_line": 265
-        },
-        {
-            "symbol": "sscanf",
+            "name": "vfscanf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 267,
-            "end_line": 267
+            "start_line": 268,
+            "end_line": 270,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 267,
-            "end_line": 267
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 267,
-            "end_line": 267
-        },
-        {
-            "symbol": "vfscanf",
+            "name": "vscanf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 270,
-            "end_line": 272
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 270,
-            "end_line": 270
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 270,
-            "end_line": 270
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 270,
-            "end_line": 270
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 271,
-            "end_line": 271
+            "end_line": 272,
+            "dependencies": []
         },
         {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 271,
-            "end_line": 271
-        },
-        {
-            "symbol": "vscanf",
+            "name": "vsscanf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 273,
-            "end_line": 274
+            "end_line": 275,
+            "dependencies": []
         },
         {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 273,
-            "end_line": 273
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 273,
-            "end_line": 273
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 273,
-            "end_line": 273
-        },
-        {
-            "symbol": "vsscanf",
+            "name": "vfscanf",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 275,
-            "end_line": 277
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 275,
-            "end_line": 275
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 276,
-            "end_line": 276
+            "end_line": 277,
+            "dependencies": []
         },
         {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 276,
-            "end_line": 276
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 276,
-            "end_line": 276
-        },
-        {
-            "symbol": "vfscanf",
+            "name": "vscanf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 278,
-            "end_line": 279
+            "end_line": 279,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 278,
-            "end_line": 278
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 278,
-            "end_line": 278
-        },
-        {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 278,
-            "end_line": 278
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 278,
-            "end_line": 278
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 278,
-            "end_line": 278
-        },
-        {
-            "symbol": "vscanf",
+            "name": "vsscanf",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 280,
-            "end_line": 281
+            "end_line": 281,
+            "dependencies": []
         },
         {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 280,
-            "end_line": 280
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 280,
-            "end_line": 280
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 280,
-            "end_line": 280
-        },
-        {
-            "symbol": "vsscanf",
+            "name": "fgetc",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 282,
-            "end_line": 283
+            "start_line": 283,
+            "end_line": 283,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 282,
-            "end_line": 282
+            "name": "getc",
+            "kind": "CursorKind.FUNCTION_DECL",
+            "start_line": 284,
+            "end_line": 284,
+            "dependencies": []
         },
         {
-            "symbol": "__format",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 282,
-            "end_line": 282
-        },
-        {
-            "symbol": "__arg",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 282,
-            "end_line": 282
-        },
-        {
-            "symbol": "__gnuc_va_list",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 282,
-            "end_line": 282
-        },
-        {
-            "symbol": "fgetc",
+            "name": "getchar",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 285,
-            "end_line": 285
+            "end_line": 285,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 285,
-            "end_line": 285
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 285,
-            "end_line": 285
-        },
-        {
-            "symbol": "getc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 286,
-            "end_line": 286
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 286,
-            "end_line": 286
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 286,
-            "end_line": 286
-        },
-        {
-            "symbol": "getchar",
+            "name": "fputc",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 287,
-            "end_line": 287
+            "end_line": 287,
+            "dependencies": []
         },
         {
-            "symbol": "fputc",
+            "name": "putc",
+            "kind": "CursorKind.FUNCTION_DECL",
+            "start_line": 288,
+            "end_line": 288,
+            "dependencies": []
+        },
+        {
+            "name": "putchar",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 289,
-            "end_line": 289
+            "end_line": 289,
+            "dependencies": []
         },
         {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 289,
-            "end_line": 289
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 289,
-            "end_line": 289
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 289,
-            "end_line": 289
-        },
-        {
-            "symbol": "putc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 290,
-            "end_line": 290
-        },
-        {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 290,
-            "end_line": 290
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 290,
-            "end_line": 290
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 290,
-            "end_line": 290
-        },
-        {
-            "symbol": "putchar",
+            "name": "fgets",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 291,
-            "end_line": 291
+            "end_line": 292,
+            "dependencies": []
         },
         {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 291,
-            "end_line": 291
-        },
-        {
-            "symbol": "fgets",
+            "name": "gets",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 293,
-            "end_line": 294
+            "start_line": 294,
+            "end_line": 294,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 293,
-            "end_line": 293
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 293,
-            "end_line": 293
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 293,
-            "end_line": 293
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 293,
-            "end_line": 293
-        },
-        {
-            "symbol": "gets",
+            "name": "fputs",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 296,
-            "end_line": 296
+            "end_line": 296,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 296,
-            "end_line": 296
+            "name": "puts",
+            "kind": "CursorKind.FUNCTION_DECL",
+            "start_line": 297,
+            "end_line": 297,
+            "dependencies": []
         },
         {
-            "symbol": "fputs",
+            "name": "ungetc",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 298,
-            "end_line": 298
+            "end_line": 298,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 298,
-            "end_line": 298
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 298,
-            "end_line": 298
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 298,
-            "end_line": 298
-        },
-        {
-            "symbol": "puts",
+            "name": "fread",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 299,
-            "end_line": 299
+            "end_line": 300,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 299,
-            "end_line": 299
-        },
-        {
-            "symbol": "ungetc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 300,
-            "end_line": 300
-        },
-        {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 300,
-            "end_line": 300
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 300,
-            "end_line": 300
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 300,
-            "end_line": 300
-        },
-        {
-            "symbol": "fread",
+            "name": "fwrite",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 301,
-            "end_line": 302
+            "end_line": 302,
+            "dependencies": []
         },
         {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 301,
-            "end_line": 301
-        },
-        {
-            "symbol": "__ptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 301,
-            "end_line": 301
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 301,
-            "end_line": 301
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 301,
-            "end_line": 301
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 302,
-            "end_line": 302
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 302,
-            "end_line": 302
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 302,
-            "end_line": 302
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 302,
-            "end_line": 302
-        },
-        {
-            "symbol": "fwrite",
+            "name": "fseek",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 303,
-            "end_line": 304
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 303,
-            "end_line": 303
-        },
-        {
-            "symbol": "__ptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 303,
-            "end_line": 303
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 303,
-            "end_line": 303
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 303,
-            "end_line": 303
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
             "start_line": 304,
-            "end_line": 304
+            "end_line": 304,
+            "dependencies": []
         },
         {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 304,
-            "end_line": 304
+            "name": "ftell",
+            "kind": "CursorKind.FUNCTION_DECL",
+            "start_line": 305,
+            "end_line": 305,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 304,
-            "end_line": 304
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 304,
-            "end_line": 304
-        },
-        {
-            "symbol": "fseek",
+            "name": "rewind",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 306,
-            "end_line": 306
+            "end_line": 306,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 306,
-            "end_line": 306
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 306,
-            "end_line": 306
-        },
-        {
-            "symbol": "__off",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 306,
-            "end_line": 306
-        },
-        {
-            "symbol": "__whence",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 306,
-            "end_line": 306
-        },
-        {
-            "symbol": "ftell",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 307,
-            "end_line": 307
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 307,
-            "end_line": 307
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 307,
-            "end_line": 307
-        },
-        {
-            "symbol": "rewind",
+            "name": "fgetpos",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 308,
-            "end_line": 308
+            "end_line": 308,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 308,
-            "end_line": 308
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 308,
-            "end_line": 308
-        },
-        {
-            "symbol": "fgetpos",
+            "name": "fsetpos",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 310,
-            "end_line": 310
+            "start_line": 309,
+            "end_line": 309,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 310,
-            "end_line": 310
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 310,
-            "end_line": 310
-        },
-        {
-            "symbol": "__pos",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 310,
-            "end_line": 310
-        },
-        {
-            "symbol": "fpos_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 310,
-            "end_line": 310
-        },
-        {
-            "symbol": "fsetpos",
+            "name": "clearerr",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 311,
-            "end_line": 311
+            "end_line": 311,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 311,
-            "end_line": 311
+            "name": "feof",
+            "kind": "CursorKind.FUNCTION_DECL",
+            "start_line": 312,
+            "end_line": 312,
+            "dependencies": []
         },
         {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 311,
-            "end_line": 311
-        },
-        {
-            "symbol": "__pos",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 311,
-            "end_line": 311
-        },
-        {
-            "symbol": "fpos_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 311,
-            "end_line": 311
-        },
-        {
-            "symbol": "clearerr",
+            "name": "ferror",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 313,
-            "end_line": 313
+            "end_line": 313,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 313,
-            "end_line": 313
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 313,
-            "end_line": 313
-        },
-        {
-            "symbol": "feof",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 314,
-            "end_line": 314
-        },
-        {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 314,
-            "end_line": 314
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 314,
-            "end_line": 314
-        },
-        {
-            "symbol": "ferror",
+            "name": "perror",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 315,
-            "end_line": 315
+            "end_line": 315,
+            "dependencies": []
         },
         {
-            "symbol": "__stream",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 315,
-            "end_line": 315
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 315,
-            "end_line": 315
-        },
-        {
-            "symbol": "perror",
+            "name": "__uflow",
             "kind": "CursorKind.FUNCTION_DECL",
             "start_line": 317,
-            "end_line": 317
+            "end_line": 317,
+            "dependencies": []
         },
         {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 317,
-            "end_line": 317
-        },
-        {
-            "symbol": "__uflow",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 319,
-            "end_line": 319
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 319,
-            "end_line": 319
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 319,
-            "end_line": 319
-        },
-        {
-            "symbol": "__overflow",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 320,
-            "end_line": 320
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 320,
-            "end_line": 320
-        },
-        {
-            "symbol": "FILE",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 320,
-            "end_line": 320
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 320,
-            "end_line": 320
-        },
-        {
-            "symbol": "memcpy",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 330,
-            "end_line": 331
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 330,
-            "end_line": 330
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 330,
-            "end_line": 330
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 331,
-            "end_line": 331
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 331,
-            "end_line": 331
-        },
-        {
-            "symbol": "memmove",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 332,
-            "end_line": 333
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 332,
-            "end_line": 332
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 332,
-            "end_line": 332
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 332,
-            "end_line": 332
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 332,
-            "end_line": 332
-        },
-        {
-            "symbol": "memset",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 335,
-            "end_line": 335
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 335,
-            "end_line": 335
-        },
-        {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 335,
-            "end_line": 335
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 335,
-            "end_line": 335
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 335,
-            "end_line": 335
-        },
-        {
-            "symbol": "memcmp",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 336,
-            "end_line": 337
-        },
-        {
-            "symbol": "__s1",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 336,
-            "end_line": 336
-        },
-        {
-            "symbol": "__s2",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 336,
-            "end_line": 336
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 336,
-            "end_line": 336
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 336,
-            "end_line": 336
-        },
-        {
-            "symbol": "__memcmpeq",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 339,
-            "end_line": 340
-        },
-        {
-            "symbol": "__s1",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 339,
-            "end_line": 339
-        },
-        {
-            "symbol": "__s2",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 339,
-            "end_line": 339
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 339,
-            "end_line": 339
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 339,
-            "end_line": 339
-        },
-        {
-            "symbol": "memchr",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 342,
-            "end_line": 343
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 342,
-            "end_line": 342
-        },
-        {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 342,
-            "end_line": 342
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 342,
-            "end_line": 342
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 342,
-            "end_line": 342
-        },
-        {
-            "symbol": "strcpy",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 345,
-            "end_line": 346
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 345,
-            "end_line": 345
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 345,
-            "end_line": 345
-        },
-        {
-            "symbol": "strncpy",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 347,
-            "end_line": 349
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 347,
-            "end_line": 347
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 348,
-            "end_line": 348
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 348,
-            "end_line": 348
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 348,
-            "end_line": 348
-        },
-        {
-            "symbol": "strcat",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 350,
-            "end_line": 351
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 350,
-            "end_line": 350
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 350,
-            "end_line": 350
-        },
-        {
-            "symbol": "strncat",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 352,
-            "end_line": 353
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 352,
-            "end_line": 352
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 352,
-            "end_line": 352
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 353,
-            "end_line": 353
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 353,
-            "end_line": 353
-        },
-        {
-            "symbol": "strcmp",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 354,
-            "end_line": 355
-        },
-        {
-            "symbol": "__s1",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 354,
-            "end_line": 354
-        },
-        {
-            "symbol": "__s2",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 354,
-            "end_line": 354
-        },
-        {
-            "symbol": "strncmp",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 356,
-            "end_line": 357
-        },
-        {
-            "symbol": "__s1",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 356,
-            "end_line": 356
-        },
-        {
-            "symbol": "__s2",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 356,
-            "end_line": 356
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 356,
-            "end_line": 356
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 356,
-            "end_line": 356
-        },
-        {
-            "symbol": "strcoll",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 358,
-            "end_line": 359
-        },
-        {
-            "symbol": "__s1",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 358,
-            "end_line": 358
-        },
-        {
-            "symbol": "__s2",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 358,
-            "end_line": 358
-        },
-        {
-            "symbol": "strxfrm",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 360,
-            "end_line": 362
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 360,
-            "end_line": 360
-        },
-        {
-            "symbol": "__dest",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 360,
-            "end_line": 360
-        },
-        {
-            "symbol": "__src",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 361,
-            "end_line": 361
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 361,
-            "end_line": 361
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 361,
-            "end_line": 361
-        },
-        {
-            "symbol": "strchr",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 364,
-            "end_line": 365
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 364,
-            "end_line": 364
-        },
-        {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 364,
-            "end_line": 364
-        },
-        {
-            "symbol": "strrchr",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 367,
-            "end_line": 368
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 367,
-            "end_line": 367
-        },
-        {
-            "symbol": "__c",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 367,
-            "end_line": 367
-        },
-        {
-            "symbol": "strcspn",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 370,
-            "end_line": 371
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 370,
-            "end_line": 370
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 370,
-            "end_line": 370
-        },
-        {
-            "symbol": "__reject",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 370,
-            "end_line": 370
-        },
-        {
-            "symbol": "strspn",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 372,
-            "end_line": 373
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 372,
-            "end_line": 372
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 372,
-            "end_line": 372
-        },
-        {
-            "symbol": "__accept",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 372,
-            "end_line": 372
-        },
-        {
-            "symbol": "strpbrk",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 375,
-            "end_line": 376
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 375,
-            "end_line": 375
-        },
-        {
-            "symbol": "__accept",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 375,
-            "end_line": 375
-        },
-        {
-            "symbol": "strstr",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 378,
-            "end_line": 379
-        },
-        {
-            "symbol": "__haystack",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 378,
-            "end_line": 378
-        },
-        {
-            "symbol": "__needle",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 378,
-            "end_line": 378
-        },
-        {
-            "symbol": "strtok",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 380,
-            "end_line": 381
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 380,
-            "end_line": 380
-        },
-        {
-            "symbol": "__delim",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 380,
-            "end_line": 380
-        },
-        {
-            "symbol": "__strtok_r",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 382,
-            "end_line": 385
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 382,
-            "end_line": 382
-        },
-        {
-            "symbol": "__delim",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 383,
-            "end_line": 383
-        },
-        {
-            "symbol": "__save_ptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 384,
-            "end_line": 384
-        },
-        {
-            "symbol": "strlen",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 387,
-            "end_line": 388
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 387,
-            "end_line": 387
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 387,
-            "end_line": 387
-        },
-        {
-            "symbol": "strerror",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 390,
-            "end_line": 390
-        },
-        {
-            "symbol": "__errnum",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 390,
-            "end_line": 390
-        },
-        {
-            "symbol": "wchar_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 399,
-            "end_line": 399
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 402,
-            "end_line": 406
-        },
-        {
-            "symbol": "quot",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 404,
-            "end_line": 404
-        },
-        {
-            "symbol": "rem",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 405,
-            "end_line": 405
-        },
-        {
-            "symbol": "div_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 406,
-            "end_line": 406
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 402,
-            "end_line": 406
-        },
-        {
-            "symbol": "quot",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 404,
-            "end_line": 404
-        },
-        {
-            "symbol": "rem",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 405,
-            "end_line": 405
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 407,
-            "end_line": 411
-        },
-        {
-            "symbol": "quot",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 409,
-            "end_line": 409
-        },
-        {
-            "symbol": "rem",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 410,
-            "end_line": 410
-        },
-        {
-            "symbol": "ldiv_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 411,
-            "end_line": 411
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 407,
-            "end_line": 411
-        },
-        {
-            "symbol": "quot",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 409,
-            "end_line": 409
-        },
-        {
-            "symbol": "rem",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 410,
-            "end_line": 410
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 412,
-            "end_line": 416
-        },
-        {
-            "symbol": "quot",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 414,
-            "end_line": 414
-        },
-        {
-            "symbol": "rem",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 415,
-            "end_line": 415
-        },
-        {
-            "symbol": "lldiv_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 416,
-            "end_line": 416
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.STRUCT_DECL",
-            "start_line": 412,
-            "end_line": 416
-        },
-        {
-            "symbol": "quot",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 414,
-            "end_line": 414
-        },
-        {
-            "symbol": "rem",
-            "kind": "CursorKind.FIELD_DECL",
-            "start_line": 415,
-            "end_line": 415
-        },
-        {
-            "symbol": "__ctype_get_mb_cur_max",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 418,
-            "end_line": 418
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 418,
-            "end_line": 418
-        },
-        {
-            "symbol": "atof",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 419,
-            "end_line": 420
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 419,
-            "end_line": 419
-        },
-        {
-            "symbol": "atoi",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 421,
-            "end_line": 422
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 421,
-            "end_line": 421
-        },
-        {
-            "symbol": "atol",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 423,
-            "end_line": 424
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 423,
-            "end_line": 423
-        },
-        {
-            "symbol": "atoll",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 425,
-            "end_line": 426
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 425,
-            "end_line": 425
-        },
-        {
-            "symbol": "strtod",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 427,
-            "end_line": 429
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 427,
-            "end_line": 427
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 428,
-            "end_line": 428
-        },
-        {
-            "symbol": "strtof",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 430,
-            "end_line": 431
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 430,
-            "end_line": 430
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 431,
-            "end_line": 431
-        },
-        {
-            "symbol": "strtold",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 432,
-            "end_line": 434
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 432,
-            "end_line": 432
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 433,
-            "end_line": 433
-        },
-        {
-            "symbol": "strtol",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 436,
-            "end_line": 438
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 436,
-            "end_line": 436
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 437,
-            "end_line": 437
-        },
-        {
-            "symbol": "__base",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 437,
-            "end_line": 437
-        },
-        {
-            "symbol": "strtoul",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 439,
-            "end_line": 441
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 439,
-            "end_line": 439
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 440,
-            "end_line": 440
-        },
-        {
-            "symbol": "__base",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 440,
-            "end_line": 440
-        },
-        {
-            "symbol": "strtoll",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 444,
-            "end_line": 446
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 444,
-            "end_line": 444
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 445,
-            "end_line": 445
-        },
-        {
-            "symbol": "__base",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 445,
-            "end_line": 445
-        },
-        {
-            "symbol": "strtoull",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 448,
-            "end_line": 450
-        },
-        {
-            "symbol": "__nptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 448,
-            "end_line": 448
-        },
-        {
-            "symbol": "__endptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 449,
-            "end_line": 449
-        },
-        {
-            "symbol": "__base",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 449,
-            "end_line": 449
-        },
-        {
-            "symbol": "rand",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 452,
-            "end_line": 452
-        },
-        {
-            "symbol": "srand",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 453,
-            "end_line": 453
-        },
-        {
-            "symbol": "__seed",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 453,
-            "end_line": 453
-        },
-        {
-            "symbol": "malloc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 455,
-            "end_line": 456
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 455,
-            "end_line": 455
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 455,
-            "end_line": 455
-        },
-        {
-            "symbol": "calloc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 457,
-            "end_line": 458
-        },
-        {
-            "symbol": "__nmemb",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 457,
-            "end_line": 457
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 457,
-            "end_line": 457
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 457,
-            "end_line": 457
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 457,
-            "end_line": 457
-        },
-        {
-            "symbol": "realloc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 459,
-            "end_line": 460
-        },
-        {
-            "symbol": "__ptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 459,
-            "end_line": 459
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 459,
-            "end_line": 459
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 459,
-            "end_line": 459
-        },
-        {
-            "symbol": "free",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 461,
-            "end_line": 461
-        },
-        {
-            "symbol": "__ptr",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 461,
-            "end_line": 461
-        },
-        {
-            "symbol": "abort",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 463,
-            "end_line": 463
-        },
-        {
-            "symbol": "atexit",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 464,
-            "end_line": 464
-        },
-        {
-            "symbol": "__func",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 464,
-            "end_line": 464
-        },
-        {
-            "symbol": "exit",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 466,
-            "end_line": 466
-        },
-        {
-            "symbol": "__status",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 466,
-            "end_line": 466
-        },
-        {
-            "symbol": "_Exit",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 468,
-            "end_line": 468
-        },
-        {
-            "symbol": "__status",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 468,
-            "end_line": 468
-        },
-        {
-            "symbol": "getenv",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 469,
-            "end_line": 469
-        },
-        {
-            "symbol": "__name",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 469,
-            "end_line": 469
-        },
-        {
-            "symbol": "system",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 471,
-            "end_line": 471
-        },
-        {
-            "symbol": "__command",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 471,
-            "end_line": 471
-        },
-        {
-            "symbol": "__compar_fn_t",
-            "kind": "CursorKind.TYPEDEF_DECL",
-            "start_line": 473,
-            "end_line": 473
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 473,
-            "end_line": 473
-        },
-        {
-            "symbol": "",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 473,
-            "end_line": 473
-        },
-        {
-            "symbol": "bsearch",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 475,
-            "end_line": 477
-        },
-        {
-            "symbol": "__key",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 475,
-            "end_line": 475
-        },
-        {
-            "symbol": "__base",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 475,
-            "end_line": 475
-        },
-        {
-            "symbol": "__nmemb",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 476,
-            "end_line": 476
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 476,
-            "end_line": 476
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 476,
-            "end_line": 476
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 476,
-            "end_line": 476
-        },
-        {
-            "symbol": "__compar",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 476,
-            "end_line": 476
-        },
-        {
-            "symbol": "__compar_fn_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 476,
-            "end_line": 476
-        },
-        {
-            "symbol": "qsort",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 478,
-            "end_line": 479
-        },
-        {
-            "symbol": "__base",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 478,
-            "end_line": 478
-        },
-        {
-            "symbol": "__nmemb",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 478,
-            "end_line": 478
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 478,
-            "end_line": 478
-        },
-        {
-            "symbol": "__size",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 478,
-            "end_line": 478
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 478,
-            "end_line": 478
-        },
-        {
-            "symbol": "__compar",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 479,
-            "end_line": 479
-        },
-        {
-            "symbol": "__compar_fn_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 479,
-            "end_line": 479
-        },
-        {
-            "symbol": "abs",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 481,
-            "end_line": 481
-        },
-        {
-            "symbol": "__x",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 481,
-            "end_line": 481
-        },
-        {
-            "symbol": "labs",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 482,
-            "end_line": 482
-        },
-        {
-            "symbol": "__x",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 482,
-            "end_line": 482
-        },
-        {
-            "symbol": "llabs",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 483,
-            "end_line": 484
-        },
-        {
-            "symbol": "__x",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 483,
-            "end_line": 483
-        },
-        {
-            "symbol": "div",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 485,
-            "end_line": 486
-        },
-        {
-            "symbol": "div_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 485,
-            "end_line": 485
-        },
-        {
-            "symbol": "__numer",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 485,
-            "end_line": 485
-        },
-        {
-            "symbol": "__denom",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 485,
-            "end_line": 485
-        },
-        {
-            "symbol": "ldiv",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 487,
-            "end_line": 488
-        },
-        {
-            "symbol": "ldiv_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 487,
-            "end_line": 487
-        },
-        {
-            "symbol": "__numer",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 487,
-            "end_line": 487
-        },
-        {
-            "symbol": "__denom",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 487,
-            "end_line": 487
-        },
-        {
-            "symbol": "lldiv",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 489,
-            "end_line": 491
-        },
-        {
-            "symbol": "lldiv_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 489,
-            "end_line": 489
-        },
-        {
-            "symbol": "__numer",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 489,
-            "end_line": 489
-        },
-        {
-            "symbol": "__denom",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 490,
-            "end_line": 490
-        },
-        {
-            "symbol": "mblen",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 493,
-            "end_line": 493
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 493,
-            "end_line": 493
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 493,
-            "end_line": 493
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 493,
-            "end_line": 493
-        },
-        {
-            "symbol": "mbtowc",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 494,
-            "end_line": 495
-        },
-        {
-            "symbol": "__pwc",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 494,
-            "end_line": 494
-        },
-        {
-            "symbol": "wchar_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 494,
-            "end_line": 494
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 495,
-            "end_line": 495
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 495,
-            "end_line": 495
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 495,
-            "end_line": 495
-        },
-        {
-            "symbol": "wctomb",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 496,
-            "end_line": 496
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 496,
-            "end_line": 496
-        },
-        {
-            "symbol": "__wchar",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 496,
-            "end_line": 496
-        },
-        {
-            "symbol": "wchar_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 496,
-            "end_line": 496
-        },
-        {
-            "symbol": "mbstowcs",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 497,
-            "end_line": 499
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 497,
-            "end_line": 497
-        },
-        {
-            "symbol": "__pwcs",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 497,
-            "end_line": 497
-        },
-        {
-            "symbol": "wchar_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 497,
-            "end_line": 497
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 498,
-            "end_line": 498
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 498,
-            "end_line": 498
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 498,
-            "end_line": 498
-        },
-        {
-            "symbol": "wcstombs",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 500,
-            "end_line": 504
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 500,
-            "end_line": 500
-        },
-        {
-            "symbol": "__s",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 500,
-            "end_line": 500
-        },
-        {
-            "symbol": "__pwcs",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 501,
-            "end_line": 501
-        },
-        {
-            "symbol": "wchar_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 501,
-            "end_line": 501
-        },
-        {
-            "symbol": "__n",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 501,
-            "end_line": 501
-        },
-        {
-            "symbol": "size_t",
-            "kind": "CursorKind.TYPE_REF",
-            "start_line": 501,
-            "end_line": 501
-        },
-        {
-            "symbol": "stack",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 511,
-            "end_line": 511
-        },
-        {
-            "symbol": "top",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 512,
-            "end_line": 512
-        },
-        {
-            "symbol": "isOperator",
+            "name": "__overflow",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 513,
-            "end_line": 528
+            "start_line": 318,
+            "end_line": 318,
+            "dependencies": []
         },
         {
-            "symbol": "x",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 513,
-            "end_line": 513
-        },
-        {
-            "symbol": "getPriority",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 529,
-            "end_line": 556
-        },
-        {
-            "symbol": "x",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 529,
-            "end_line": 529
-        },
-        {
-            "symbol": "push",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 557,
-            "end_line": 559
-        },
-        {
-            "symbol": "x",
-            "kind": "CursorKind.PARM_DECL",
-            "start_line": 557,
-            "end_line": 557
-        },
-        {
-            "symbol": "pop",
+            "name": "main",
             "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 560,
-            "end_line": 565
-        },
-        {
-            "symbol": "main",
-            "kind": "CursorKind.FUNCTION_DECL",
-            "start_line": 566,
-            "end_line": 621
-        },
-        {
-            "symbol": "i",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 567,
-            "end_line": 567
-        },
-        {
-            "symbol": "length",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 567,
-            "end_line": 567
-        },
-        {
-            "symbol": "k",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 567,
-            "end_line": 567
-        },
-        {
-            "symbol": "inputString",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 568,
-            "end_line": 568
-        },
-        {
-            "symbol": "postfixForm",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 568,
-            "end_line": 568
-        },
-        {
-            "symbol": "x",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 568,
-            "end_line": 568
-        },
-        {
-            "symbol": "first",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 568,
-            "end_line": 568
-        },
-        {
-            "symbol": "second",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 568,
-            "end_line": 568
-        },
-        {
-            "symbol": "temp",
-            "kind": "CursorKind.VAR_DECL",
-            "start_line": 568,
-            "end_line": 568
+            "start_line": 322,
+            "end_line": 325,
+            "dependencies": []
         }
     ],
     "segments": [
         {
             "file": "segments/segment_0.c",
-            "lines": 100
+            "lines": 136
         },
         {
             "file": "segments/segment_1.c",
-            "lines": 97
+            "lines": 86
         },
         {
             "file": "segments/segment_2.c",
-            "lines": 100
+            "lines": 91
         },
         {
             "file": "segments/segment_3.c",
-            "lines": 100
-        },
-        {
-            "file": "segments/segment_4.c",
-            "lines": 100
-        },
-        {
-            "file": "segments/segment_5.c",
-            "lines": 100
-        },
-        {
-            "file": "segments/segment_6.c",
-            "lines": 100
-        },
-        {
-            "file": "segments/segment_7.c",
-            "lines": 98
-        },
-        {
-            "file": "segments/segment_8.c",
-            "lines": 100
-        },
-        {
-            "file": "segments/segment_9.c",
-            "lines": 100
-        },
-        {
-            "file": "segments/segment_10.c",
-            "lines": 89
-        },
-        {
-            "file": "segments/segment_11.c",
-            "lines": 68
-        },
-        {
-            "file": "segments/segment_12.c",
-            "lines": 65
+            "lines": 35
         }
+    ],
+    "unresolved_dependencies": [
+        "FILE"
     ]
 }
