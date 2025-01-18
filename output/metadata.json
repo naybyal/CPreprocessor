@@ -3933,55 +3933,55 @@
     ],
     "segments": [
         {
-            "file": "output/segment_0.c",
+            "file": "segments/segment_0.c",
             "lines": 100
         },
         {
-            "file": "output/segment_1.c",
+            "file": "segments/segment_1.c",
             "lines": 97
         },
         {
-            "file": "output/segment_2.c",
+            "file": "segments/segment_2.c",
             "lines": 100
         },
         {
-            "file": "output/segment_3.c",
+            "file": "segments/segment_3.c",
             "lines": 100
         },
         {
-            "file": "output/segment_4.c",
+            "file": "segments/segment_4.c",
             "lines": 100
         },
         {
-            "file": "output/segment_5.c",
+            "file": "segments/segment_5.c",
             "lines": 100
         },
         {
-            "file": "output/segment_6.c",
+            "file": "segments/segment_6.c",
             "lines": 100
         },
         {
-            "file": "output/segment_7.c",
+            "file": "segments/segment_7.c",
             "lines": 98
         },
         {
-            "file": "output/segment_8.c",
+            "file": "segments/segment_8.c",
             "lines": 100
         },
         {
-            "file": "output/segment_9.c",
+            "file": "segments/segment_9.c",
             "lines": 100
         },
         {
-            "file": "output/segment_10.c",
+            "file": "segments/segment_10.c",
             "lines": 89
         },
         {
-            "file": "output/segment_11.c",
+            "file": "segments/segment_11.c",
             "lines": 68
         },
         {
-            "file": "output/segment_12.c",
+            "file": "segments/segment_12.c",
             "lines": 65
         }
     ]

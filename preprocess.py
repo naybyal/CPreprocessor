@@ -6,6 +6,7 @@ from collections import defaultdict
 import clang.cindex
 
 OUTPUT_DIR = "output"
+SEGMENT_DIR = "segments"
 
 # Symbol metadata structure
 class Symbol:
@@ -140,6 +141,8 @@ def handle_macros_with_clang(file):
 
 
 def segment_code(file, symbols, max_lines):
+    os.makedirs(SEGMENT_DIR, exist_ok=True)
+    
     with open(file, "r") as f:
         lines = f.readlines()
 
@@ -157,7 +160,7 @@ def segment_code(file, symbols, max_lines):
 
         # Create new segment if current exceeds max_lines
         if current_line_count + (end - start) > max_lines:
-            segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+            segment_file = os.path.join(SEGMENT_DIR, f"segment_{len(segments)}.c")
             with open(segment_file, "w") as sf:
                 sf.writelines(current_segment)
             segments.append(Segment(segment_file, len(current_segment)))
@@ -170,7 +173,7 @@ def segment_code(file, symbols, max_lines):
 
     # Handle remaining lines
     if current_segment:
-        segment_file = os.path.join(OUTPUT_DIR, f"segment_{len(segments)}.c")
+        segment_file = os.path.join(SEGMENT_DIR, f"segment_{len(segments)}.c")
         with open(segment_file, "w") as sf:
             sf.writelines(current_segment)
         segments.append(Segment(segment_file, len(current_segment)))
