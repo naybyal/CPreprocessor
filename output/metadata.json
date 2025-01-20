@@ -527,19 +527,11 @@
     "segments": [
         {
             "file": "segments/segment_0.c",
-            "lines": 136
+            "lines": 79
         },
         {
             "file": "segments/segment_1.c",
-            "lines": 86
-        },
-        {
-            "file": "segments/segment_2.c",
-            "lines": 91
-        },
-        {
-            "file": "segments/segment_3.c",
-            "lines": 35
+            "lines": 44
         }
     ],
     "unresolved_dependencies": [
