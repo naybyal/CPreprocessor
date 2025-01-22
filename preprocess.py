@@ -81,48 +81,6 @@ def preprocess_with_cpp(file):
         raise Exception(f"C preprocessor failed for {file}: {e.stderr}") from e
 
 
-def extract_contextual_info(file):
-    """Extract contextual information using Clang."""
-    index = clang.cindex.Index.create()
-    translation_unit = index.parse(file)
-    symbols = []
-
-    def traverse_ast(cursor):
-        """Recursively traverse the AST."""
-        try:
-            if cursor.kind in (
-                clang.cindex.CursorKind.FUNCTION_DECL,
-                clang.cindex.CursorKind.VAR_DECL,
-                clang.cindex.CursorKind.STRUCT_DECL,
-                clang.cindex.CursorKind.UNION_DECL,
-                clang.cindex.CursorKind.TYPEDEF_DECL,
-                clang.cindex.CursorKind.ENUM_DECL,
-                clang.cindex.CursorKind.ENUM_CONSTANT_DECL,
-                clang.cindex.CursorKind.FIELD_DECL,
-                clang.cindex.CursorKind.PARM_DECL,
-                clang.cindex.CursorKind.TYPE_REF,
-                clang.cindex.CursorKind.CXX_METHOD,  # For C++ methods (if needed)
-                clang.cindex.CursorKind.NAMESPACE,  # For C++ namespaces (if needed)
-                clang.cindex.CursorKind.CONSTRUCTOR,  # For C++ constructors (if needed)
-                clang.cindex.CursorKind.DESTRUCTOR,  # For C++ destructors (if needed)
-                # ... add other relevant CursorKinds as needed ...
-            ):
-                symbols.append(
-                    Symbol(
-                        cursor.spelling,
-                        str(cursor.kind),
-                        cursor.location.line,
-                        cursor.extent.end.line,
-                    )
-                )
-        except ValueError as e:
-            print(f"Error processing symbol: {cursor.spelling} - {e}")
-
-        for child in cursor.get_children():
-            traverse_ast(child)
-
-    traverse_ast(translation_unit.cursor)
-    return symbols
 
 def handle_macros_with_clang(file):
     """Handle macros with Clang preprocessing."""

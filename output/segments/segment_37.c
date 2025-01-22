@@ -1,0 +1,1 @@
+                char welcome[80];
