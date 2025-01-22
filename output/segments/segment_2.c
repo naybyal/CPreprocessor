@@ -1,4 +1,1 @@
-void disableRawMode() {
-    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &E.orig_termios) == -1) 
-        die("tcsetattr");
-}
+	char sendmsg[30], recvmsg[20];
