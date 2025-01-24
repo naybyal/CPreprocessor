@@ -1,1 +1,1 @@
-	int x = close(csd);
+} __mbstate_t;

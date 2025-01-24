@@ -1,1 +1,1 @@
-	int csd, len;
+    unsigned int __wch;

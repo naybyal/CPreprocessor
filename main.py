@@ -1,6 +1,8 @@
 import os
 import json
 from preprocessor.preprocess import (
+    preprocess_with_cpp,
+    process_macros,
     remove_blank_lines,
     extract_contextual_info,
     dynamic_segment_code,
@@ -79,13 +81,13 @@ def preprocess_and_segment(input_file, max_complexity, output_dir="output"):
 
     # Preprocessing stage
     print("Running the C preprocessor...")
-    # preprocessed_file = preprocess_with_cpp(input_file, output_dir=output_dir)
-    # preprocessed_file = remove_blank_lines(preprocessed_file)
+    preprocessed_file = preprocess_with_cpp(input_file, output_dir=output_dir)
+    preprocessed_file = remove_blank_lines(preprocessed_file)
 
-    # # Macro processing
-    # print("Processing macros...")
-    # processed_file = process_macros(preprocessed_file)
-    processed_file = remove_blank_lines(input_file)
+    # Macro processing
+    print("Processing macros...")
+    processed_file = process_macros(preprocessed_file)
+    processed_file = remove_blank_lines(preprocessed_file)
 
     # Context extraction
     print("Extracting contextual information...")
