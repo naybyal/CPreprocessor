@@ -3,6 +3,7 @@ import re
 import subprocess
 import json
 from collections import defaultdict, deque
+import uuid
 import clang.cindex
 
 # Constants for output directories
@@ -71,58 +72,41 @@ def extract_user_defined_includes(file):
     return list(user_defined_paths)
 
 
-def remove_blank_lines(file_path):
+def parse_header_files(headers, include_paths):
     """
-    Remove blank lines from a file.
+    Recursively parse header files and extract symbols.
     """
-    with open(file_path, "r") as f:
-        lines = [line for line in f if line.strip()]
-
-    with open(file_path, "w") as f:
-        f.writelines(lines)
-
-    return file_path
-
-
-def process_macros(file):
-    """
-    Separate macros (#define) from the source file and save them separately.
-    """
-    macros, processed_lines = [], []
-
-    with open(file, "r") as f:
-        for line in f:
-            stripped = line.strip()
-            if stripped.startswith("#define"):
-                macros.append(stripped)
-            else:
-                processed_lines.append(line)
-
-    macros_file = os.path.join(OUTPUT_DIR, "macros.txt")
-    processed_file = os.path.join(OUTPUT_DIR, "processed_macros.c")
-
-    with open(macros_file, "w") as mf:
-        mf.write("\n".join(macros))
-
-    with open(processed_file, "w") as pf:
-        pf.writelines(processed_lines)
-
-    return processed_file
-
-
-def extract_contextual_info(file):
-    """
-    Extract symbols (functions, structs, variables, etc.) and their dependencies using Clang.
-    """
+    symbols = []
+    visited = set()
     index = clang.cindex.Index.create()
-    translation_unit = index.parse(file)
+
+    def parse_file(file_path):
+        if file_path in visited:
+            return
+        visited.add(file_path)
+
+        try:
+            tu = index.parse(file_path, args=[f"-I{path}" for path in include_paths])
+            symbols.extend(extract_symbols_from_ast(tu.cursor, file_path))
+        except Exception as e:
+            print(f"Error parsing header {file_path}: {e}")
+
+    for header in headers:
+        parse_file(header)
+
+    return symbols
+
+
+def extract_symbols_from_ast(cursor, file):
+    """
+    Extract symbols from the AST of a given file.
+    """
     symbols = []
     seen_ranges = set()
 
-    def traverse_ast(cursor):
-        # Process only nodes within the input file
-        if cursor.location.file and os.path.samefile(cursor.location.file.name, file):
-            if cursor.kind in (
+    def traverse_ast(node):
+        if node.location.file and os.path.samefile(node.location.file.name, file):
+            if node.kind in (
                 clang.cindex.CursorKind.FUNCTION_DECL,
                 clang.cindex.CursorKind.VAR_DECL,
                 clang.cindex.CursorKind.STRUCT_DECL,
@@ -130,30 +114,24 @@ def extract_contextual_info(file):
                 clang.cindex.CursorKind.CLASS_DECL,
                 clang.cindex.CursorKind.ENUM_DECL,
                 clang.cindex.CursorKind.TYPEDEF_DECL,
-            ):
-                start_line, end_line = cursor.location.line, cursor.extent.end.line
-
-                # Skip overlapping ranges
-                if (start_line, end_line) in seen_ranges:
-                    return
-
-                symbols.append(
-                    Symbol(
-                        name=cursor.spelling,
-                        kind=str(cursor.kind),
-                        start_line=start_line,
-                        end_line=end_line,
-                        dependencies=[
-                            ref.spelling for ref in cursor.get_children() if ref.kind.is_reference()
-                        ],
+            ) and node.is_definition():
+                start_line, end_line = node.location.line, node.extent.end.line
+                if (start_line, end_line) not in seen_ranges:
+                    symbols.append(
+                        Symbol(
+                            name=node.spelling,
+                            kind=str(node.kind),
+                            start_line=start_line,
+                            end_line=end_line,
+                            dependencies=[ref.spelling for ref in node.get_children() if ref.kind.is_reference()],
+                        )
                     )
-                )
-                seen_ranges.add((start_line, end_line))
+                    seen_ranges.add((start_line, end_line))
 
-        for child in cursor.get_children():
+        for child in node.get_children():
             traverse_ast(child)
 
-    traverse_ast(translation_unit.cursor)
+    traverse_ast(cursor)
     return symbols
 
 
@@ -198,7 +176,7 @@ def topological_sort(graph):
     return sorted_order
 
 
-def dynamic_segment_code(file, symbols):
+def segment_code(file, symbols):
     """
     Segment code based on extracted symbols and save each segment to a file.
     """
@@ -206,52 +184,62 @@ def dynamic_segment_code(file, symbols):
         lines = f.readlines()
 
     segments = []
-    for idx, symbol in enumerate(symbols):
+    for symbol in symbols:
         start, end = symbol.start_line - 1, symbol.end_line
         if start < 0 or end > len(lines):
             continue
 
-        segment_file = os.path.join(SEGMENT_DIR, f"segment_{idx}.c")
+        segment_file = os.path.join(SEGMENT_DIR, f"{symbol.name}_{uuid.uuid4().hex}.c")
         with open(segment_file, "w") as seg_file:
             seg_file.writelines(lines[start:end])
-        segments.append(segment_file)
+        segments.append((segment_file, symbol))
 
     return segments
 
 
-def is_unnecessary_segment(segment_content):
+def filter_meaningful_segments(segments):
     """
-    Determine if a segment is unnecessary based on its content.
+    Filter meaningful segments based on refined criteria.
     """
-    return bool(
-        re.match(r"^extern\s+\w+\s*\*?\w+;$", segment_content) or  # Extern declarations
-        not segment_content.strip()  # Empty or whitespace-only
-    )
+    meaningful_segments = []
+    metadata = []
 
-
-def filter_segments(symbols, segments):
-    """
-    Filter meaningful segments and generate metadata for the final output.
-    """
-    meaningful_segments, metadata = [], []
-    symbol_ranges = {(symbol.start_line, symbol.end_line): symbol.to_dict() for symbol in symbols}
-
-    for idx, segment_file in enumerate(segments):
+    for segment_file, symbol in segments:
         with open(segment_file, "r") as f:
             content = f.read()
 
-        associated_symbols = [
-            symbol for (start, end), symbol in symbol_ranges.items() if start - 1 <= idx < end
-        ]
-
-        if associated_symbols and not is_unnecessary_segment(content):
-            meaningful_segments.append(segment_file)
-            metadata.append({"segment": segment_file, "symbols": associated_symbols})
-        else:
+        if not content.strip():
             os.remove(segment_file)
+            continue
+
+        meaningful_segments.append(segment_file)
+        metadata.append({
+            "segment": segment_file,
+            "symbol": symbol.to_dict(),
+        })
 
     metadata_file = os.path.join(OUTPUT_DIR, "metadata.json")
     with open(metadata_file, "w") as f:
         json.dump(metadata, f, indent=4)
 
     return meaningful_segments
+
+
+def main(input_file):
+    user_defined_includes = extract_user_defined_includes(input_file)
+    preprocessed_file = preprocess_with_cpp(input_file, user_defined_includes)
+    header_symbols = parse_header_files(user_defined_includes, user_defined_includes)
+    file_symbols = extract_symbols_from_ast(clang.cindex.Index.create().parse(preprocessed_file).cursor, preprocessed_file)
+    symbols = file_symbols + header_symbols
+
+    dependency_graph = build_dependency_graph(symbols)
+    sorted_symbols = [symbol for name in topological_sort(dependency_graph) for symbol in symbols if symbol.name == name]
+    segments = segment_code(preprocessed_file, sorted_symbols)
+    meaningful_segments = filter_meaningful_segments(segments)
+
+    print("Meaningful segments saved:", meaningful_segments)
+
+
+if __name__ == "__main__":
+    clang.cindex.Config.set_library_file("/usr/lib/x86_64-linux-gnu/libclang-14.so")  # Adjust for your environment
+    main("main.c")
