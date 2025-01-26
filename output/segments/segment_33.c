@@ -1,1 +1,1 @@
-  struct _IO_codecvt *_codecvt;
+typedef long int __off_t;

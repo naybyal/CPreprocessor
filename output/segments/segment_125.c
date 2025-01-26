@@ -1,1 +1,1 @@
-  SOCK_RAW = 3,
+extern int puts (const char *__s);

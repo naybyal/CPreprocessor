@@ -1,1 +1,1 @@
-  struct _IO_marker *_markers;
+typedef unsigned long int __u_quad_t;

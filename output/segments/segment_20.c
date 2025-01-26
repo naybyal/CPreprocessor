@@ -1,1 +1,1 @@
-  char *_IO_save_base;
+typedef __int64_t __int_least64_t;

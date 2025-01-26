@@ -1,1 +1,1 @@
-    char sa_data[14];
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);

@@ -1,1 +1,1 @@
-  __mbstate_t __state;
+typedef unsigned short int __uint16_t;

@@ -1,1 +1,1 @@
-extern int puts (const char *__s);
+typedef __fpos_t fpos_t;

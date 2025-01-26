@@ -1,1 +1,1 @@
-extern FILE *stdin;
+typedef unsigned int __id_t;

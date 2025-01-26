@@ -1,1 +1,1 @@
-  struct _IO_FILE *_chain;
+typedef long int __intmax_t;

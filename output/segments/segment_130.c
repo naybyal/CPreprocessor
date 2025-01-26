@@ -1,1 +1,1 @@
-  SOCK_CLOEXEC = 02000000,
+extern long int ftell (FILE *__stream) ;

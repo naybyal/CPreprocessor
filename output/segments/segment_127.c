@@ -1,1 +1,2 @@
-  SOCK_SEQPACKET = 5,
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;

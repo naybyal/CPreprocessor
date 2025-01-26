@@ -1,1 +1,1 @@
-  signed char _vtable_offset;
+typedef unsigned long int __ino_t;

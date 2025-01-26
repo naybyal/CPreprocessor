@@ -1,1 +1,1 @@
-  __mbstate_t __state;
+typedef signed char __int8_t;

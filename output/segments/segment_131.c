@@ -1,1 +1,1 @@
-  SOCK_NONBLOCK = 00004000
+extern void rewind (FILE *__stream);

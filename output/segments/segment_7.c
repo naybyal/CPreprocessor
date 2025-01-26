@@ -1,1 +1,1 @@
-} __fpos_t;
+typedef unsigned char __uint8_t;

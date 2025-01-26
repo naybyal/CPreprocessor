@@ -1,1 +1,2 @@
-extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+extern FILE *tmpfile (void)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;

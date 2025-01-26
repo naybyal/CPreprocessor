@@ -1,1 +1,1 @@
-extern int getchar (void);
+typedef struct _IO_FILE FILE;

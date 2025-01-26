@@ -1,2 +1,2 @@
-extern size_t strcspn (const char *__s, const char *__reject)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;

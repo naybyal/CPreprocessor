@@ -1,1 +1,1 @@
-  char _shortbuf[1];
+typedef unsigned long int __ino64_t;

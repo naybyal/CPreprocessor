@@ -1,1 +1,1 @@
-extern int scanf (const char *__restrict __format, ...) ;
+typedef long int __intptr_t;

@@ -1,1 +1,1 @@
-extern int fseek (FILE *__stream, long int __off, int __whence);
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));

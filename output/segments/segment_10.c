@@ -1,1 +1,1 @@
-} __fpos64_t;
+typedef signed int __int32_t;

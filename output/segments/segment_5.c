@@ -1,1 +1,1 @@
-  __off_t __pos;
+typedef unsigned long int __u_long;

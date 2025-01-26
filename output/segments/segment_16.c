@@ -1,1 +1,1 @@
-  char *_IO_write_ptr;
+typedef __int16_t __int_least16_t;

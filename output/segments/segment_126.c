@@ -1,1 +1,1 @@
-  SOCK_RDM = 4,
+extern int ungetc (int __c, FILE *__stream);

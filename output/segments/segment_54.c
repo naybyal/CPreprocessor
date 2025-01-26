@@ -1,1 +1,1 @@
-extern int printf (const char *__restrict __format, ...);
+typedef unsigned long int __fsfilcnt_t;

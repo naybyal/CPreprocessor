@@ -1,1 +1,1 @@
-  struct _IO_FILE *_freeres_list;
+typedef int __pid_t;

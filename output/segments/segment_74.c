@@ -1,1 +1,1 @@
-extern int getc (FILE *__stream);
+struct _IO_FILE;

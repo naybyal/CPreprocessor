@@ -2,6 +2,8 @@ import os
 import subprocess
 from collections import defaultdict, deque
 import clang.cindex
+import re
+
 
 # Output directories
 OUTPUT_DIR = "output"
@@ -14,12 +16,13 @@ os.makedirs(SEGMENT_DIR, exist_ok=True)
 
 class Symbol:
     """Represents a symbol in the source file."""
-    def __init__(self, name, kind, start_line, end_line=None, dependencies=None):
+    def __init__(self, name, kind, start_line, end_line=None, dependencies=None, segment=None):
         self.name = name
         self.kind = kind
         self.start_line = start_line
         self.end_line = end_line
         self.dependencies = dependencies or []
+        self.segment = segment
 
     def to_dict(self):
         return {
@@ -30,71 +33,75 @@ class Symbol:
             "dependencies": self.dependencies,
         }
 
-def preprocess_with_cpp(file, include_paths=None, output_dir="output"):
+
+def preprocess_with_cpp(input_file: str, include_paths=None, output_dir="output"):
     """
-    Preprocess the C file to resolve includes and macros, filtering out system-level code.
+    Preprocess a C file with the C preprocessor.
     Args:
-        file (str): Path to the input C file.
-        include_paths (list, optional): List of include paths for headers.
-        output_dir (str): Directory to save the preprocessed file.
+        input_file (str): Path to the input file.
+        include_paths (list, optional): List of include paths to consider.
+        output_dir (str): Directory to store preprocessed output.
     Returns:
         str: Path to the preprocessed file.
+    Raises:
+        RuntimeError: If the preprocessing fails.
     """
-    preprocessed_file = os.path.join(output_dir, f"preprocessed_{os.path.basename(file)}")
-    cmd = ["gcc", "-E", file, "-o", preprocessed_file, "-std=c99"]
+    if include_paths is None:
+        include_paths = []
 
-    if include_paths:
-        for path in include_paths:
-            cmd.extend(["-I", path])  # Add include paths
+    standard_include_paths = [
+        "/usr/include",
+        "/usr/lib/gcc/x86_64-linux-gnu/12/include"
+    ]
+    include_paths.extend(standard_include_paths)
+
+    include_flags = [f"-I{path}" for path in include_paths]
+    preprocessed_file = os.path.join(output_dir, f"preprocessed_{os.path.basename(input_file)}")
+
+    cmd = ["gcc", "-E", *include_flags, input_file, "-o", preprocessed_file, "-std=c99"]
 
     try:
         subprocess.run(cmd, check=True, stderr=subprocess.PIPE)
-        print(f"Preprocessed file saved at {preprocessed_file}")
-
-        # Filter out system-level includes and incomplete lines
-        with open(preprocessed_file, "r") as f:
-            lines = f.readlines()
-
-        filtered_lines = [
-            line for line in lines
-            if not line.startswith("#") and
-            not line.strip().startswith("typedef struct") and
-            not line.strip().startswith("{")
-        ]
-
-        with open(preprocessed_file, "w") as f:
-            f.writelines(filtered_lines)
-
-        print(f"Filtered preprocessed file saved at {preprocessed_file}")
-        return preprocessed_file
-
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"Preprocessing failed: {e.stderr.decode()}")
+
+    return preprocessed_file
+
+
+def extract_user_defined_includes(file):
+    """
+    Extract user-defined include paths from the input file.
+    User-defined headers are usually enclosed in double quotes.
+    """
+    user_defined_paths = set()
+    include_pattern = re.compile(r'#include\s+"(.+?)"')
+
+    with open(file, "r") as f:
+        for line in f:
+            match = include_pattern.search(line)
+            if match:
+                include_file = match.group(1)
+                user_defined_paths.add(os.path.dirname(include_file))
+
+    print(f"User-defined include paths extracted: {user_defined_paths}")
+    return list(user_defined_paths)
+
 
 def remove_blank_lines(file_path):
     """
     Remove blank lines from a file.
-    Args:
-        file_path (str): Path to the file.
-    Returns:
-        str: Path to the cleaned file.
     """
     with open(file_path, "r") as f:
-        lines = f.readlines()
-    non_empty_lines = [line for line in lines if line.strip()]
+        lines = [line for line in f if line.strip()]
     with open(file_path, "w") as f:
-        f.writelines(non_empty_lines)
+        f.writelines(lines)
     print(f"Blank lines removed from {file_path}")
     return file_path
 
 
 def process_macros(file):
     """
-    Process macros and generate a simplified source file.
-    Args:
-        file (str): Path to the preprocessed file.
-    Returns:
-        str: Path to the processed file with macros simplified.
+    Process macros in the file and save them to a separate file.
     """
     macros = []
     processed_lines = []
@@ -104,11 +111,6 @@ def process_macros(file):
             stripped = line.strip()
             if stripped.startswith("#define"):
                 macros.append(stripped)
-            elif stripped.startswith("#ifdef") or stripped.startswith("#ifndef"):
-                condition = stripped.split()[1]
-                processed_lines.append(f"// Macro condition: {condition}\n")
-            elif stripped.startswith("#endif"):
-                continue
             else:
                 processed_lines.append(line)
 
@@ -123,13 +125,10 @@ def process_macros(file):
     print(f"Processed file saved at {processed_file}")
     return processed_file
 
+
 def extract_contextual_info(file):
     """
-    Extract user-defined symbols and ensure no overlapping ranges.
-    Args:
-        file (str): Path to the processed file.
-    Returns:
-        list: A list of Symbol objects.
+    Extract user-defined symbols and their dependencies from the AST.
     """
     index = clang.cindex.Index.create()
     translation_unit = index.parse(file)
@@ -141,6 +140,11 @@ def extract_contextual_info(file):
             if cursor.kind in (
                 clang.cindex.CursorKind.FUNCTION_DECL,
                 clang.cindex.CursorKind.VAR_DECL,
+                clang.cindex.CursorKind.STRUCT_DECL,
+                clang.cindex.CursorKind.UNION_DECL,
+                clang.cindex.CursorKind.CLASS_DECL,
+                clang.cindex.CursorKind.ENUM_DECL,
+                clang.cindex.CursorKind.TYPEDEF_DECL,
             ):
                 start_line = cursor.location.line
                 end_line = cursor.extent.end.line
@@ -169,9 +173,10 @@ def extract_contextual_info(file):
     print(f"Extracted {len(symbols)} user-defined symbols.")
     return symbols
 
+
 def build_dependency_graph(symbols):
     """
-    Build a dependency graph from symbols, ignoring external dependencies.
+    Build a dependency graph from symbols.
     """
     graph = defaultdict(list)
     nodes = {symbol.name for symbol in symbols}
@@ -180,20 +185,18 @@ def build_dependency_graph(symbols):
         for dependency in symbol.dependencies:
             if dependency in nodes:
                 graph[symbol.name].append(dependency)
-            else:
-                # Ignore unresolved external dependencies
-                print(f"Ignoring unresolved external dependency: {dependency}")
 
-    # Ensure all nodes are included, even if they have no dependencies
-    for symbol in symbols:
-        if symbol.name not in graph:
-            graph[symbol.name] = []
+    for node in nodes:
+        if node not in graph:
+            graph[node] = []
 
     return graph
 
 
 def topological_sort(graph):
-    """Perform a topological sort on the dependency graph."""
+    """
+    Perform a topological sort on the dependency graph.
+    """
     in_degree = {node: 0 for node in graph}
     for node in graph:
         for dependency in graph[node]:
@@ -214,33 +217,22 @@ def topological_sort(graph):
         raise ValueError("Dependency graph has cycles!")
     return sorted_order
 
-def dynamic_segment_code(file, symbols, max_complexity):
+
+def dynamic_segment_code(file, symbols):
     """
-    Segment the code dynamically, creating a separate segment for each symbol.
-    Args:
-        file (str): Path to the processed file.
-        symbols (list): List of Symbol objects.
-        max_complexity (int): Maximum complexity per segment.
-    Returns:
-        list: A list of segment file paths.
+    Segment the code based on extracted symbols.
     """
     segments = []
-
     with open(file, "r") as f:
         lines = f.readlines()
 
-    # Process each symbol individually
     for idx, symbol in enumerate(symbols):
         start, end = symbol.start_line - 1, symbol.end_line
 
-        # Skip invalid ranges
         if start < 0 or end > len(lines):
             continue
 
-        # Extract lines for this symbol
         segment_lines = lines[start:end]
-
-        # Save the segment
         segment_file = os.path.join(SEGMENT_DIR, f"segment_{idx}.c")
         with open(segment_file, "w") as f:
             f.writelines(segment_lines)
@@ -251,10 +243,61 @@ def dynamic_segment_code(file, symbols, max_complexity):
     return segments
 
 
-def save_segment(segments, segment_lines):
-    """Save a segment to the output directory."""
-    segment_file = os.path.join(SEGMENT_DIR, f"segment_{len(segments)}.c")
-    with open(segment_file, "w") as f:
-        f.writelines(segment_lines)
-    print(f"Segment saved: {segment_file}")
-    return segment_file
+def filter_segments(symbols, segments):
+    """
+    Filter out unnecessary segments and update metadata.json.
+    Args:
+        symbols (list): List of extracted Symbol objects.
+        segments (list): List of segment file paths.
+    Returns:
+        list: Filtered segments with meaningful content.
+    """
+    meaningful_segments = []
+    metadata = []
+
+    # Map symbol start and end lines to segments
+    symbol_ranges = {(symbol.start_line, symbol.end_line): symbol.to_dict() for symbol in symbols}
+
+    for idx, segment_file in enumerate(segments):
+        with open(segment_file, "r") as f:
+            segment_content = f.read().strip()
+
+        # Check if the segment is associated with any meaningful symbol
+        associated_symbols = [
+            symbol for (start, end), symbol in symbol_ranges.items()
+            if start - 1 <= idx < end  # Adjust for 0-based index
+        ]
+
+        if associated_symbols and not is_unnecessary_segment(segment_content):
+            meaningful_segments.append(segment_file)
+            metadata.append({
+                "segment": segment_file,
+                "symbols": associated_symbols
+            })
+        else:
+            print(f"Removing unnecessary segment: {segment_file}")
+            os.remove(segment_file)  # Delete unnecessary segment file
+
+    # Save filtered metadata
+    metadata_file = os.path.join(OUTPUT_DIR, "metadata.json")
+    with open(metadata_file, "w") as f:
+        json.dump(metadata, f, indent=4)
+    print(f"Filtered metadata saved at {metadata_file}")
+
+    return meaningful_segments
+
+
+def is_unnecessary_segment(segment_content):
+    """
+    Determine if a segment is unnecessary by analyzing its content.
+    Args:
+        segment_content (str): Content of the segment file.
+    Returns:
+        bool: True if the segment is unnecessary, False otherwise.
+    """
+    # Check for common patterns in unnecessary segments
+    return bool(
+        re.match(r"^extern\s+\w+\s*\*?\w+;$", segment_content) or  # extern declarations
+        re.match(r"^\s*$", segment_content)  # Empty lines or whitespace-only
+    )
+

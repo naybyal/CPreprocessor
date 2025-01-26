@@ -1,1 +1,1 @@
-  int _flags;
+typedef unsigned int __uint32_t;

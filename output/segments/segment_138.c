@@ -1,1 +1,1 @@
-    socklen_t msg_namelen;
+extern int __uflow (FILE *);

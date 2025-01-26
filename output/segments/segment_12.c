@@ -1,1 +1,1 @@
-  char *_IO_read_ptr;
+typedef signed long int __int64_t;

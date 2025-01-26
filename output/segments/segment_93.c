@@ -1,1 +1,3 @@
-extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) ;

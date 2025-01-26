@@ -1,1 +1,1 @@
-extern char *tmpnam (char[20]) __attribute__ ((__nothrow__ , __leaf__)) ;
+typedef int __clockid_t;

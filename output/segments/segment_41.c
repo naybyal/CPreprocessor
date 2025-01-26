@@ -1,1 +1,1 @@
-extern FILE *stdout;
+typedef long int __time_t;

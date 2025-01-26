@@ -1,1 +1,1 @@
-  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+typedef unsigned long int __rlim64_t;

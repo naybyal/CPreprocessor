@@ -1,2 +1,2 @@
-extern char *strchr (const char *__s, int __c)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;

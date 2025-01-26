@@ -1,1 +1,1 @@
-extern FILE *stderr;
+typedef unsigned int __useconds_t;

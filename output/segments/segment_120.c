@@ -1,1 +1,1 @@
-extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+extern int putc (int __c, FILE *__stream);

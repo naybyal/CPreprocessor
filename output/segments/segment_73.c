@@ -1,1 +1,1 @@
-extern int fgetc (FILE *__stream);
+typedef struct _IO_FILE __FILE;

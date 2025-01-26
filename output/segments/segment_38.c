@@ -1,1 +1,1 @@
-  int _mode;
+typedef unsigned long int __rlim_t;

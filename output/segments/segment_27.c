@@ -1,1 +1,1 @@
-  __off_t _old_offset;
+typedef unsigned int __uid_t;

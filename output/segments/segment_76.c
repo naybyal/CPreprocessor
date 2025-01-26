@@ -1,1 +1,1 @@
-extern int fputc (int __c, FILE *__stream);
+struct _IO_FILE;

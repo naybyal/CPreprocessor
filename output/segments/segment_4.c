@@ -1,1 +1,1 @@
-} __mbstate_t;
+typedef unsigned int __u_int;

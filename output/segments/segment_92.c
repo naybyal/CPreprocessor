@@ -1,1 +1,3 @@
-extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes)
+  __attribute__ ((__malloc__)) __attribute__ ((__malloc__ (fclose, 1))) ;

@@ -1,1 +1,1 @@
-extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+extern char *tmpnam (char[20]) __attribute__ ((__nothrow__ , __leaf__)) ;

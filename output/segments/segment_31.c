@@ -1,1 +1,1 @@
-  _IO_lock_t *_lock;
+typedef unsigned int __mode_t;

@@ -1,1 +1,1 @@
-  struct _IO_wide_data *_wide_data;
+typedef long int __off64_t;

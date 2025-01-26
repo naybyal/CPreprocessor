@@ -1,1 +1,1 @@
-  __off64_t _offset;
+typedef unsigned long int __nlink_t;

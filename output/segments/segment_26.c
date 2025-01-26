@@ -1,1 +1,1 @@
-  int _flags2;
+typedef unsigned long int __dev_t;

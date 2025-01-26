@@ -1,1 +1,1 @@
-  __off64_t __pos;
+typedef signed short int __int16_t;

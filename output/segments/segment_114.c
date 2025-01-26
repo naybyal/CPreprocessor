@@ -1,2 +1,2 @@
-extern size_t strspn (const char *__s, const char *__accept)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;

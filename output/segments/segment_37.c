@@ -1,1 +1,1 @@
-  size_t __pad5;
+typedef long int __clock_t;

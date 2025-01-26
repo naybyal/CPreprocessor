@@ -1,1 +1,1 @@
-    char __wchb[4];
+typedef unsigned char __u_char;

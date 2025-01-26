@@ -1,1 +1,1 @@
-extern int fflush (FILE *__stream);
+typedef void * __timer_t;

@@ -1,1 +1,1 @@
-    void *iov_base;
+extern int putchar (int __c);

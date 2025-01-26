@@ -1,1 +1,1 @@
-  char *_IO_read_end;
+typedef unsigned long int __uint64_t;

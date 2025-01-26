@@ -1,2 +1,5 @@
-extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
-     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+typedef struct _G_fpos_t
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} __fpos_t;

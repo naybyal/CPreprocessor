@@ -1,1 +1,1 @@
-    char __ss_padding[(128 - (sizeof (unsigned short int)) - sizeof (unsigned long int))];
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;

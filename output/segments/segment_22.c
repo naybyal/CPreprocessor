@@ -1,1 +1,1 @@
-  char *_IO_save_end;
+typedef long int __quad_t;

@@ -1,1 +1,1 @@
-  unsigned short _cur_column;
+typedef unsigned int __gid_t;

@@ -1,1 +1,1 @@
-  char *_IO_buf_base;
+typedef __int32_t __int_least32_t;

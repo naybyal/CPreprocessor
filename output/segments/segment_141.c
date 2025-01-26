@@ -1,1 +1,0 @@
-    void *msg_control;

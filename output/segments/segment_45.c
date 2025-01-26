@@ -1,1 +1,1 @@
-extern int fclose (FILE *__stream);
+typedef int __daddr_t;

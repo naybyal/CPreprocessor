@@ -1,2 +1,1 @@
-extern int strncmp (const char *__s1, const char *__s2, size_t __n)
-     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf")

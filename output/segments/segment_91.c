@@ -1,1 +1,1 @@
-extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern int fflush (FILE *__stream);

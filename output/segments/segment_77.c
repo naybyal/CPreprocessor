@@ -1,1 +1,1 @@
-extern int putc (int __c, FILE *__stream);
+struct _IO_marker;
