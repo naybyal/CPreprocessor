@@ -52,3 +52,39 @@
 #         raise Exception(f"C preprocessor failed for {file}: {e.stderr}") from e
 #     print(f"Preprocessed file saved as {output_file}")
 #     return output_file
+
+
+# def translate_to_rust(c_code):
+#     """Translates C code to Rust using Gemini API."""
+#     try:
+#         # Configure the Gemini API
+#         genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+        
+#         # Create the model instance
+#         model = genai.GenerativeModel('gemini-pro')
+        
+#         # Create the system instruction prompt
+#         prompt = f"""You are an expert programmer experienced in C and Rust conversion.
+#         Translate the following C code to safe, idiomatic Rust code.
+#         Include detailed comments explaining key changes.
+        
+#         Requirements:
+#         1. Use proper ownership semantics
+#         2. Convert pointers to Rust-safe constructs
+#         3. Add proper error handling
+#         4. Preserve original functionality
+#         5. Add documentation comments
+#         6. Since these are all segment which will be merged, do not expand any stray function calls 
+#         7. return a rust file with all the other information as comments
+
+#         C Code:
+#         {c_code}
+        
+#         Rust Translation:"""
+        
+#         # Generate the response
+#         response = model.generate_content(prompt)
+#         return response.text
+        
+#     except Exception as e:
+#         return f"// Translation failed: {str(e)}"

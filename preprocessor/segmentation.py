@@ -1,10 +1,9 @@
 import os
-import json
 import clang.cindex
 import networkx as nx
 
 def extract_symbols(file):
-    """Extract function definitions, structs, and macros using Clang AST."""
+    """Extracts function definitions, structs, and macros using Clang AST."""
     index = clang.cindex.Index.create()
     translation_unit = index.parse(file)
     symbols = []
@@ -16,13 +15,20 @@ def extract_symbols(file):
             clang.cindex.CursorKind.UNION_DECL,
             clang.cindex.CursorKind.MACRO_DEFINITION,
         ):
-            symbols.append({
+            symbol = {
                 "name": cursor.spelling,
                 "kind": cursor.kind.name,
                 "start_line": cursor.extent.start.line,
                 "end_line": cursor.extent.end.line,
-                "dependencies": [ref.spelling for ref in cursor.get_children() if ref.kind.is_reference()]
-            })
+                "dependencies": []
+            }
+            # Extract dependencies (function calls, struct usage)
+            for child in cursor.get_children():
+                if child.kind.is_reference():
+                    symbol["dependencies"].append(child.spelling)
+            
+            symbols.append(symbol)
+
         for child in cursor.get_children():
             traverse(child)
 
@@ -30,7 +36,7 @@ def extract_symbols(file):
     return symbols
 
 def build_dependency_graph(symbols):
-    """Build a dependency graph using function calls and struct references."""
+    """Builds a dependency graph using function calls and struct references."""
     graph = nx.DiGraph()
     for symbol in symbols:
         graph.add_node(symbol["name"])
@@ -39,20 +45,26 @@ def build_dependency_graph(symbols):
     return graph
 
 def segment_code(file, symbols, output_dir="output"):
-    """Segment code based on extracted symbols."""
+    """Segments code based on extracted symbols and ensures coherent segments."""
     os.makedirs(output_dir, exist_ok=True)
     with open(file, "r") as f:
         lines = f.readlines()
 
-    segments = []
-    for idx, symbol in enumerate(symbols):
+    segments = {}
+    for symbol in symbols:
         start, end = symbol["start_line"] - 1, symbol["end_line"]
         if start < 0 or end > len(lines):
             continue
 
+        segment_code = "".join(lines[start:end])
+        segments[symbol["name"]] = segment_code
+
+    # Save segments to files
+    segment_files = {}
+    for idx, (name, code) in enumerate(segments.items()):
         segment_file = os.path.join(output_dir, f"segment_{idx}.c")
         with open(segment_file, "w") as f:
-            f.writelines(lines[start:end])
-        segments.append(segment_file)
+            f.write(code)
+        segment_files[name] = segment_file
 
-    return segments
+    return segment_files

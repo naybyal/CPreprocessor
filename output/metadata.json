@@ -1,21 +1,30 @@
 {
     "segments": [
         {
-            "segment_id": 0,
-            "file": "output/segment_12.c",
-            "contained_symbols": [],
+            "segment_id": "callMe",
+            "file": "output/segment_0.c",
+            "rust_file": "callMe.rs",
+            "contained_symbols": [
+                "callMe"
+            ],
             "dependencies": []
         },
         {
-            "segment_id": 1,
-            "file": "output/segment_13.c",
-            "contained_symbols": [],
+            "segment_id": "add",
+            "file": "output/segment_1.c",
+            "rust_file": "add.rs",
+            "contained_symbols": [
+                "add"
+            ],
             "dependencies": []
         },
         {
-            "segment_id": 2,
-            "file": "output/segment_109.c",
-            "contained_symbols": [],
+            "segment_id": "main",
+            "file": "output/segment_2.c",
+            "rust_file": "main.rs",
+            "contained_symbols": [
+                "main"
+            ],
             "dependencies": []
         }
     ]
