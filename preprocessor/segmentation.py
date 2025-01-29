@@ -14,6 +14,7 @@ def extract_symbols(file):
             clang.cindex.CursorKind.STRUCT_DECL,
             clang.cindex.CursorKind.UNION_DECL,
             clang.cindex.CursorKind.MACRO_DEFINITION,
+            
         ):
             symbol = {
                 "name": cursor.spelling,

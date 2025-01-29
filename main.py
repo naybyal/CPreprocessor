@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 
 def write_rust_file(segment_id, rust_code, metadata):
     """Writes translated Rust code and updates metadata.json with Rust file path."""
-    rust_file_name = f"{segment_id}.rs"  # Generate a filename for Rust segment
+    rust_file_name = f"{segment_id}.rs"  
     rust_file_path = os.path.join(RUST_OUTPUT_DIR, rust_file_name)
 
     os.makedirs(RUST_OUTPUT_DIR, exist_ok=True)
@@ -25,7 +25,6 @@ def write_rust_file(segment_id, rust_code, metadata):
 
     logging.info(f"Written Rust code for {segment_id} to {rust_file_path}")
 
-    # Update the correct segment in metadata
     for segment in metadata["segments"]:
         if segment["segment_id"] == segment_id:
             segment["rust_file"] = rust_file_name
@@ -88,7 +87,6 @@ def main(input_file):
         rust_code = rust_segments.get(segment_id, "// Error: Rust translation missing")
         write_rust_file(segment_id, rust_code, metadata)
 
-    # Combine all Rust segments into one output.rs file
     combine_rust_segments(metadata_file, FINAL_RUST_FILE)
 
 if __name__ == "__main__":

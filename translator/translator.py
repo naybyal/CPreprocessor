@@ -28,10 +28,12 @@ def translate_to_rust(c_code):
         model = genai.GenerativeModel('gemini-pro')
         
         # Create the system instruction prompt
-        prompt = f"""You are an expert programmer experienced in C and Rust conversion.
-        Translate the following C code to safe, idiomatic Rust code.
+        prompt = f"""You are an expert programmer experienced in C and Rust conversion as per 2025 standards.
+        Please translate the following C code to safe, idiomatic Rust code.
 
         Requirements:
+
+       Requirements:
         1. Use proper ownership semantics
         2. Convert pointers to Rust-safe constructs
         3. Add proper error handling
@@ -39,7 +41,7 @@ def translate_to_rust(c_code):
         5. Do not include ANY comments or explanations
         6. Do not expand stray function calls (segments will be merged)
         7. Output ONLY the Rust code with no additional text
-        8. Skip any "#define"
+        
                 
         C Code:
         {c_code}

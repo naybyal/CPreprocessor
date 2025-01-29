@@ -1,3 +1,3 @@
-void callMe() {
-    printf("sorted!");
+int add(int a, int b) {
+    return a + b;
 }
